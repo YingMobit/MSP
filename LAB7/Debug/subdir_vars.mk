@@ -3,6 +3,14 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430f5529.cmd \
+../lnk_msp430f5529_USB.cmd 
+
+LIB_SRCS += \
+../MSP-EXP430F5529_UE.lib \
+../rts430xl.lib 
+
 C_SRCS += \
 ../LAB7main.c \
 ../lab7.c \

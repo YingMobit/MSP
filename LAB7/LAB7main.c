@@ -98,8 +98,7 @@ static const uint8_t tiBug[] =
 };
 
 
-void main(void)
-{
+void main(void){
     uint8_t contrast = *((unsigned char *)contrastSetpointAddress);            //读取FLASH中对比度值
     uint8_t brightness = *((unsigned char *)brightnessSetpointAddress);        //读取FLASH中背光值
 
@@ -113,7 +112,7 @@ void main(void)
 
     // Basic GPIO initialization
     Board_init();                                 //初始化GPIO
-
+/*c'c'c*/
     // Set Vcore to accomodate for max. allowed system speed
     SetVCore(3);                                  //设VCore为最大
 

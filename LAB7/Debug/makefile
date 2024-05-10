@@ -18,6 +18,10 @@ $(GEN_CMDS__FLAG) \
 "./lab7.obj" \
 "./LAB7main.obj" \
 -l"libc.a" \
+"../MSP-EXP430F5529_UE.lib" \
+"../lnk_msp430f5529.cmd" \
+"../lnk_msp430f5529_USB.cmd" \
+"../rts430xl.lib" \
 
 -include ../makefile.init
 
@@ -125,7 +129,7 @@ endif
 all: LAB7.out
 
 # Tool invocations
-LAB7.out: $(OBJS) $(GEN_CMDS)
+LAB7.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
 	"D:/ti/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/ti/ccsv5/ccs_base/msp430/include" -i"D:/ti/ccsv5/tools/compiler/msp430/lib" -i"D:/ti/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out" $(ORDERED_OBJS)
