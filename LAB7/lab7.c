@@ -89,8 +89,8 @@ void lab7(void)
 	    else
 	       switch (selection)
 	        {
-                case 1: LaunchpadDef(); break;    //�ɴ�������Ϸʵ�����
-                case 2: Mouse(); break;           //USB���ʵ�����
+                case 1: LaunchpadDef(); break;    //锟缴达拷锟斤拷锟斤拷锟斤拷戏实锟斤拷锟斤拷锟�
+                case 2: Mouse(); break;           //USB锟斤拷锟绞碉拷锟斤拷锟斤拷
                 default: break;
 	        }
 }
@@ -224,13 +224,16 @@ uint8_t offset[2];
 // index zero), the horizontal position (in index one), and the vertical
 // position (in index two).  If all three variables are negative one, then that
 // mine does not exist.
-int8_t mines[5][3];
+int8_t mines[5][4];
 
 // The location of the missile, if it has been fired.  The first entry contains
 // the horizontal position and the second entry contains the vertical position.
 // If both are negative one, then the missile has not been fired.
-int8_t missile[2];
-
+int8_t missile[3][2] = {
+    {-1, -1},  // 瀛愬脊1鐨勪綅缃�
+    {-1, -1},  // 瀛愬脊2鐨勪綅缃�
+    {-1, -1}   // 瀛愬脊3鐨勪綅缃�
+};
 // An array of explosions currently active on the display.  Up to five
 // explosions can be displayed (the fifth being dedicated to the ship
 // explosion), and each has three variables associated with it: the explosion
@@ -384,6 +387,8 @@ void UpdateMines(void)
 {
     uint8_t count, max;
     uint32_t idx;
+    uint8_t dir =1;
+    uint8_t mineoffset = 0;
 
     // The maximum horizontal position of any mine found.
     max = 0;
@@ -399,6 +404,19 @@ void UpdateMines(void)
 
         // Move the mine one step to the left
         mines[count][1]--;
+
+        //if(mineoffset < 2 && mines[count][2] > 1 )
+        //{
+        	//mines[count][2] += dir;
+        	//mineoffset++;
+        //}
+        //else
+        //{
+        	//mineoffset = 0;
+        	//dir = -dir;
+        //}
+
+        mines[count][2]--;
 
         // If the mine is too far off the left edge of the display then disable it.
         if (mines[count][1] == -8)
@@ -465,8 +483,9 @@ void UpdateMines(void)
     mines[count][1] = 94;
     // Choose a random vertical position
     idx = NEXT_RAND(idx);
-    mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
-
+    //mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
+    //mines[count][3] = offset[0] + idx % (64 - offset[0] - offset[1]);
+    mines[count][2] = 63;
     if (mines[count][0] == 0)
     {
         // Draw mine type one on the local frame buffer.
@@ -486,150 +505,121 @@ void UpdateMines(void)
  * @return none
  ******************************************************************************/
 
-void UpdateMissile(uint8_t fire, uint8_t dead)
-{
+void UpdateMissile(uint8_t fire, uint8_t dead) {
     uint8_t bit, x;
     uint16_t pos;
+    uint8_t interval = 5; // 瀛愬脊闂撮殧
 
-    //Set the x position to zero to indicate that no impact has been detected.
-    x = 0;
-
-    // See if a missile is currently in flight.
-    if ((missile[0] == -1) && (missile[1] == -1))
-    {
-        // No missile is in flight, so see if one should be fired.
-        if (fire && !dead)
-        {
-            // Set the horizontal position of a newly fired missile,shipwidth=10,height=8,posX=5
-            missile[0] = 15;
-
-            //Set the vertical position by the position of the ship
+    // 濡傛灉fire涓虹湡锛屽彂灏勫瓙寮�
+    if (fire && !dead) {
+    	int i;
+        for (i = 0; i < 3; i++) {
+            // 鍒涘缓鏂扮殑瀛愬脊锛岃缃叾浣嶇疆锛屽苟娣诲姞鍒板瓙寮规暟缁勪腑
+            missile[i][0] = 15;
             pos = Wheel_getValue();
-            if (pos > 0x824)
-            {
-                //Scale pos for size of screen. pos range is (0~63)
+            if (pos > 0x824) {
                 pos = (0xFFF - pos) / 32;
-            }
-            else
-            {
+            } else {
                 pos = pos / 32;
             }
-
-            if (pos > 56)
-            {
-                // Don't let ship go off bottom of screen.
+            if (pos > 56) {
                 pos = 56;
             }
-
-            missile[1] = pos + 8;
-        }
-        else
-        {
-            // do nothing because no missile fired or in flight
-            return;
+            missile[i][1] = pos + 8 + i * interval;
         }
     }
 
-    // Move the missile to the right.
-    missile[0] += 2;
+    // 鏇存柊姣忎釜瀛愬脊鐨勪綅缃紝骞舵鏌ユ槸鍚︽湁纰版挒
+    int i;
+    for ( i = 0; i < 3; i++) {
+        // Move the missile to the right.
+        missile[i][0] += 2;
 
-    // See if the missile has moved off the display.
-    if (missile[0] >= 101)
-    {
-        // The missile is no longer on the display, so remove it
-        missile[0] = -1;
-        missile[1] = -1;
-        // Return without doing anything else.
-        return;
-    }
-
-    // Compute the bit that contains the missile. Ybit
-    bit = 0x80 >> (missile[1] % 8);
-
-    // Draw the left most column of the missile and check for an impact.
-    frame[2 + (missile[1] / 8) * 102 + (missile[0] + 0)] ^= bit;
-    if ((frame[2 + (missile[1] / 8) * 102 + (missile[0] + 0)] & bit) != bit)
-    {
-        frame[2 + (missile[1] / 8) * 102 + (missile[0] + 0)] |= bit;
-        //impact location
-        x = missile[0];
-    }
-
-    // Draw the middle column of the missile and check for an impact.
-    frame[2 + (missile[1] / 8) * 102 + (missile[0] + 1)] ^= bit;
-    if ((frame[2 + (missile[1] / 8) * 102 + (missile[0] + 1)] & bit) != bit)
-    {
-        frame[2 + (missile[1] / 8) * 102 + (missile[0] + 1)] |= bit;
-        if (x == 0)
-        {
-            x = missile[0] + 1;
+        // See if the missile has moved off the display.
+        if (missile[i][0] >= 101) {
+            // The missile is no longer on the display, so remove it
+            missile[i][0] = -1;
+            missile[i][1] = -1;
+            // Return without doing anything else.
+            continue;
         }
-    }
 
-    // Draw the right column of the missile and check for an impact.  The
-    // right column may be off the display, so bypass the check in that
-    // case.
-    if (missile[0] <= 99)
-    {
-        frame[2 + (missile[1] / 8) * 102 + (missile[0] + 2)] ^= bit;
-        if ((frame[2 + (missile[1] / 8) * 102 + (missile[0] + 2)] & bit) != bit)
-        {
-            frame[2 + (missile[1] / 8) * 102 + (missile[0] + 2)] |= bit;
-            if (x == 0)
-            {
-                x = missile[0] + 2;
+        // Compute the bit that contains the missile. Ybit
+        bit = 0x80 >> (missile[i][1] % 8);
+
+        // Draw the left most column of the missile and check for an impact.
+        frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 0)] ^= bit;
+        if ((frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 0)] & bit) != bit) {
+            frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 0)] |= bit;
+            //impact location
+            x = missile[i][0];
+        }
+
+        // Draw the middle column of the missile and check for an impact.
+        frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 1)] ^= bit;
+        if ((frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 1)] & bit) != bit) {
+            frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 1)] |= bit;
+            if (x == 0) {
+                x = missile[i][0] + 1;
             }
         }
-    }
 
-    // See if the missile hit something.
-    if (x != 0)
-    {
-        // Loop through the mines.
-        for (bit = 0; bit < 5; bit++)
-        {
-            // See if the missile hit this mine.
-            if ((mines[bit][0] != -1) && (mines[bit][1] <= x) &&
-                ((mines[bit][1] + mines[bit][0] + 7) >= x) &&
-                (mines[bit][2] <= missile[1]) &&
-                ((mines[bit][2] + mines[bit][0] + 7) >= missile[1]))
-            {
-                // This mine was struck, so remove it from the display.
-                mines[bit][0] = -1;
-                mines[bit][1] = -1;
-                mines[bit][2] = -1;
-
-                if (!dead)
-                {
-                    score += 25;
+        // Draw the right column of the missile and check for an impact.  The
+        // right column may be off the display, so bypass the check in that
+        // case.
+        if (missile[i][0] <= 99) {
+            frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 2)] ^= bit;
+            if ((frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 2)] & bit) != bit) {
+                frame[2 + (missile[i][1] / 8) * 102 + (missile[i][0] + 2)] |= bit;
+                if (x == 0) {
+                    x = missile[i][0] + 2;
                 }
-
-                // Stop looking through the mines.
-                break;
             }
         }
 
-        // Find an empty entry in the explosion list.
-        for (bit = 0; bit < 4; bit++)
-        {
-            if (explosions[bit][0] == -1)
-            {
-                break;
+        // See if the missile hit something.
+        if (x != 0) {
+            // Loop through the mines.
+            for (bit = 0; bit < 5; bit++) {
+                // See if the missile hit this mine.
+                if ((mines[bit][0] != -1) && (mines[bit][1] <= x) &&
+                    ((mines[bit][1] + mines[bit][0] + 7) >= x) &&
+                    (mines[bit][2] <= missile[i][1]) &&
+                    ((mines[bit][2] + mines[bit][0] + 7) >= missile[i][1])) {
+                    // This mine was struck, so remove it from the display.
+                    mines[bit][0] = -1;
+                    mines[bit][1] = -1;
+                    mines[bit][2] = -1;
+
+                    if (!dead) {
+                        score += 25;
+
+                        // Find an empty entry in the explosion list.
+                                    for (bit = 0; bit < 4; bit++) {
+                                        if (explosions[bit][0] == -1) {
+                                            break;
+                                        }
+                                    }
+
+                                    // See if an empty entry was found.
+                                    if (bit != 4) {
+                                        // Start an explosion at the point of impact.
+                                        explosions[bit][0] = 0;
+                                        explosions[bit][1] = missile[i][0] + 2;
+                                        explosions[bit][2] = missile[i][1] - 1;
+                                    }
+                    }
+                    // Stop looking through the mines.
+                    break;
+                }
             }
-        }
 
-        // See if an empty entry was found.
-        if (bit != 4)
-        {
-            // Start an explosion at the point of impact.
-            explosions[bit][0] = 0;
-            explosions[bit][1] = x;
-            explosions[bit][2] = missile[1] - 1;
-        }
 
-        // Remove the missile from the display.
-        missile[0] = -1;
-        missile[1] = -1;
+
+            // Remove the missile from the display.
+            //missile[i][0] = -1;
+            //missile[i][1] = -1;
+        }
     }
 }
 
@@ -782,29 +772,29 @@ void LaunchpadDef(void)
     buttonsPressed = 0;
     __enable_interrupt();
     Dogs102x6_clearScreen();
-    Dogs102x6_imageDraw(image, 0, 0);                      //���Ʒɴ�ͼ��
+    Dogs102x6_imageDraw(image, 0, 0);                      //锟斤拷锟狡飞达拷图锟斤拷
     Dogs102x6_stringDraw(7, 0, "LaunchpadDefender", 0);
 
-    //�ȴ�����������
+    //锟饺达拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
     while (!buttonsPressed)
     {
         // Wait in low power mode 3 until a button is pressed
         __bis_SR_register(LPM3_bits + GIE);
     }
 
-    if (buttonsPressed & BUTTON_S1)                       //�����µ�ΪS1������ִ�ж��ڳ��������µ�ΪS2�������˳�
+    if (buttonsPressed & BUTTON_S1)                       //锟斤拷锟斤拷锟铰碉拷为S1锟斤拷锟斤拷锟斤拷执锟叫讹拷锟节筹拷锟斤拷锟斤拷锟斤拷锟铰碉拷为S2锟斤拷锟斤拷锟斤拷锟剿筹拷
     {
         buttonsPressed = 0;
-        while (1)                                         //��Ϸ�����ڸö���
+        while (1)                                         //锟斤拷戏锟斤拷锟斤拷锟节该讹拷锟斤拷
         {
             restart = 0;
 
 
-            // ��ʼ�������ײ��Ͷ�����ʾ
+            // 锟斤拷始锟斤拷锟斤拷锟斤拷锟阶诧拷锟酵讹拷锟斤拷锟斤拷示
             offset[0] = 10;
             offset[1] = 10;
 
-            // �ر����е���
+            // 锟截憋拷锟斤拷锟叫碉拷锟斤拷
             for (idx = 0; idx < 5; idx++)
             {
                 mines[idx][0] = -1;
@@ -812,26 +802,30 @@ void LaunchpadDef(void)
                 mines[idx][2] = -1;
             }
 
-            // �رյ�������
-            missile[0] = -1;
-            missile[1] = -1;
+            // 锟截闭碉拷锟斤拷锟斤拷锟斤拷
+            missile[0][0] =-1;
+            missile[0][1] =-1;
+            missile[1][0] =-1;
+            missile[1][1] =-1;
+            missile[2][0] =-1;
+            missile[2][1] =-1;
 
-            // �ر����б�ը
+            // 锟截憋拷锟斤拷锟叫憋拷炸
             for (idx = 0; idx < 5; idx++)
             {
                 explosions[idx][0] = -1;
             }
 
-            // ���õ÷�Ϊ0
+            // 锟斤拷锟矫得凤拷为0
             score = 0;
 
-            // ����ɴ�
+            // 锟斤拷锟斤拷纱锟�
             dead = 0;
             timeout = 0;
 
             Dogs102x6_clearScreen();
 
-            // �������ͼ��������
+            // 锟斤拷锟斤拷锟斤拷锟酵硷拷锟斤拷锟斤拷锟斤拷锟�
             for (a = 0; a < 8; a++)
             {
                 for (idx = 0; idx < 102; idx++)
@@ -846,34 +840,34 @@ void LaunchpadDef(void)
             // Update the tunnel background, making sure that there are at least
             // thirteen scan lines between the top and bottom walls (providing
             // room for the "Press Button To Play" text).
-            UpdateBackground(40);                       //��������ͼ����������ÿ�ε��øú�����ʹ����ͼ�����ҹ���һ��
-            Dogs102x6_imageDraw((uint8_t*)frame, 0, 0); //���»��棬������ʾ
+            UpdateBackground(40);                       //锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷每锟轿碉拷锟矫该猴拷锟斤拷锟斤拷使锟斤拷锟斤拷图锟斤拷锟斤拷锟揭癸拷锟斤拷一锟斤拷
+            Dogs102x6_imageDraw((uint8_t*)frame, 0, 0); //锟斤拷锟铰伙拷锟芥，锟斤拷锟斤拷锟斤拷示
             buttonsPressed = 0;
 
             while (!restart)
             {
                 // Update the tunnel.  The tunnel gets smaller as the score goes
                 // up.
-                UpdateBackground(30 - (score / 500));  //��������ͼ����������ÿ�ε��øú�����ʹ����ͼ�����ҹ���һ��
-                UpdateMines();                         //������������
-                if (buttonsPressed) fire = 1;          //����а������£����䵼��
+                UpdateBackground(30 - (score / 500));  //锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷每锟轿碉拷锟矫该猴拷锟斤拷锟斤拷使锟斤拷锟斤拷图锟斤拷锟斤拷锟揭癸拷锟斤拷一锟斤拷
+                UpdateMines();                         //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+                if (buttonsPressed) fire = 1;          //锟斤拷锟斤拷邪锟斤拷锟斤拷锟斤拷拢锟斤拷锟斤拷涞硷拷锟�
                 else fire = 0;
                 buttonsPressed = 0;
-                if (dead)                              //����ɴ����������г�ʱ�ۼӣ�Ϊ���Ʒɴ�������ը�ṩʱ��
+                if (dead)                              //锟斤拷锟斤拷纱锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷谐锟绞憋拷奂樱锟轿拷锟斤拷品纱锟斤拷锟斤拷锟斤拷锟秸拷峁┦憋拷锟�
                 {
                     timeout++;
                 }
-                if (!dead)                             //���ɴ�û������
+                if (!dead)                             //锟斤拷锟缴达拷没锟斤拷锟斤拷锟斤拷
                 {
-                    dead = DrawShip();                 //���Ʒɴ�ͼ���������طɴ�����״̬
-                    UpdateMissile(fire, dead);         //���µ���
+                    dead = DrawShip();                 //锟斤拷锟狡飞达拷图锟斤拷锟斤拷锟斤拷锟斤拷锟截飞达拷锟斤拷锟斤拷状态
+                    UpdateMissile(fire, dead);         //锟斤拷锟铰碉拷锟斤拷
                 }
-                DrawExplosions();                      //���Ʊ�ըͼ��
-                RandomAddEntropy(score);               //�洢�÷�
+                DrawExplosions();                      //锟斤拷锟狡憋拷炸图锟斤拷
+                RandomAddEntropy(score);               //锟芥储锟矫凤拷
 
-                Dogs102x6_imageDraw((uint8_t*)frame, 0, 0);     //���»��棬������ʾ��ÿ��ֻ���øú���ʱ��������ʾͼ���ĸ���
+                Dogs102x6_imageDraw((uint8_t*)frame, 0, 0);     //锟斤拷锟铰伙拷锟芥，锟斤拷锟斤拷锟斤拷示锟斤拷每锟斤拷只锟斤拷锟矫该猴拷锟斤拷时锟斤拷锟斤拷锟斤拷锟斤拷示图锟斤拷锟侥革拷锟斤拷
 
-                if (timeout == 32)                     //����ʱ�������ﵽ32�����ʾ�ɴ�������ը�ѻ�����ɣ�������ʾ˵�����÷�
+                if (timeout == 32)                     //锟斤拷锟斤拷时锟斤拷锟斤拷锟斤拷锟斤到32锟斤拷锟斤拷锟绞撅拷纱锟斤拷锟斤拷锟斤拷锟秸拷鸦锟斤拷锟斤拷锟缴ｏ拷锟斤拷锟斤拷锟斤拷示说锟斤拷锟斤拷锟矫凤拷
                 {
                     Dogs102x6_setInverseDisplay();
                     __delay_cycles(6000000);
@@ -906,10 +900,10 @@ void LaunchpadDef(void)
                         __bis_SR_register(LPM3_bits + GIE);
                     }
 
-                    restart = 1;                           //�˳���Ϸ������ѭ��
+                    restart = 1;                           //锟剿筹拷锟斤拷戏锟斤拷锟斤拷锟斤拷循锟斤拷
                 }
 
-                //������Ϸ�ٶȣ�����Խ�ߣ���Ϸ�����ٶ�Խ��
+                //锟斤拷锟斤拷锟斤拷戏锟劫度ｏ拷锟斤拷锟斤拷越锟竭ｏ拷锟斤拷戏锟斤拷锟斤拷锟劫讹拷越锟斤拷
                 if (score < 500)
                     __delay_cycles(500000);
                 else if (score < 1000)
@@ -922,7 +916,7 @@ void LaunchpadDef(void)
                     __delay_cycles(100000);
 
             }
-            if (buttonsPressed & BUTTON_S2)               //��S2�������£����˳���Ϸ��������S1�����������һ����Ϸ
+            if (buttonsPressed & BUTTON_S2)               //锟斤拷S2锟斤拷锟斤拷锟斤拷锟铰ｏ拷锟斤拷锟剿筹拷锟斤拷戏锟斤拷锟斤拷锟斤拷锟斤拷S1锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟揭伙拷锟斤拷锟较�
             {
                 Dogs102x6_clearScreen();
                 buttonsPressed = 0;
@@ -983,8 +977,8 @@ char *itoa(int n, char *s, int b)
  * @return none
  ******************************************************************************/
 #pragma vector = UNMI_VECTOR
-__interrupt void UNMI_ISR(void)
-{
+__interrupt void UNMI_ISR(void){
+    
     switch (__even_in_range(SYSUNIV, SYSUNIV_BUSIFG))
     {
         case SYSUNIV_NONE:
@@ -1006,4 +1000,6 @@ __interrupt void UNMI_ISR(void)
             USB_disable();                              // Disable
     }
 }
+
+
 
