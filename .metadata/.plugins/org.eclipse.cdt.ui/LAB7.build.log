@@ -1,0 +1,7 @@
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+LAB7main.pp:4: *** missing separator.  Stop.
+
+**** Build Finished ****
