@@ -147,11 +147,29 @@ const uint8_t dust[] =
 	0xC0,0xC0
 };
 
-
 // A bitmap for mine type two.
 const uint8_t Game_mine2[] =
 {
     0xC3, 0xC3, 0x3C, 0x3C, 0x3C, 0x3C, 0xC3, 0xC3
+};
+
+// 陨石3(形状为方形加一点)：用子弹打碎后飞船可以发射激光：击碎一行的陨石
+const uint8_t Game_mine3[] =
+{
+	0x7E, 0x42, 0x5A, 0x5A, 0x42, 0x7E
+};
+// 激光
+const uint8_t laser[] =
+{
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
+	0xE0,0xE0
+
 };
 
 // A bitmap for the first stage of an explosion
@@ -223,6 +241,9 @@ int8_t missile[3][2] = {
     {-1, -1},
     {-1, -1}
 };
+//射线 索引0表示水平坐标，索引1表示垂直坐标
+int8_t laserBar[2];
+
 // An array of explosions currently active on the display.  Up to five
 // explosions can be displayed (the fifth being dedicated to the ship
 // explosion), and each has three variables associated with it: the explosion
@@ -511,7 +532,7 @@ void UpdateMines1(int* switcher)
         // Move the mine one step to the left
         mines[count][1]--;
         //随机决定上下移动
-        int choice = simple_random_choice();
+/*        int choice = simple_random_choice();
         if(choice == 0 && mines[count][2] <= 44)
         {
         	mines[count][2]++;
@@ -519,7 +540,7 @@ void UpdateMines1(int* switcher)
         if(choice == 1 && mines[count][2] >= 20)
         {
         	mines[count][2]--;
-        }
+        }*/
 
         // If the mine is too far off the left edge of the display then disable it.
         if (mines[count][1] == -8)
@@ -551,11 +572,11 @@ void UpdateMines1(int* switcher)
             // Draw mine type twos
             DrawImage(Game_mine2, mines[count][1], mines[count][2], 8);
         }
-        /*else if(mines[count][0] == 2)
+        else if(mines[count][0] == 2)
         {
         	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
         }
-        else if(mines[count][0] == 3)
+        /*else if(mines[count][0] == 3)
         {
         	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
         }
@@ -643,11 +664,11 @@ void UpdateMines1(int* switcher)
         // Draw mine type two on the local frame buffer.
         DrawImage(Game_mine2, mines[count][1], mines[count][2], 8);
     }
-    /*else if(mines[count][0] == 2)
+    else if(mines[count][0] == 2)
     {
     	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
     }
-    else if(mines[count][0] == 3)
+    /*else if(mines[count][0] == 3)
     {
     	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
     }
@@ -661,36 +682,55 @@ void UpdateMines1(int* switcher)
  * @brief  Move the missile further to the right, checking for impacts.
  * @param  fire The status of the fire button (0 = not pressed, 1 = pressed)
  * @param  dead The status of the ship (0 = alive, 1 = dead)
- * @return none
+ * @return returner
  ******************************************************************************/
 
-void UpdateMissile(uint8_t fire, uint8_t dead) {
+int UpdateMissile(uint8_t fire, uint8_t dead, int returner) {
     uint8_t bit, x;
     uint16_t pos;
 
     uint8_t interval = 5;
+    int k;
+    int count = 0;
+    for(k = 0; k < 3; k++)
+    {
+    	if ((missile[k][0] == -1) && (missile[k][1] == -1))
+    	{
+    		count++;
+    	}
+    }
+    if(count == 3) //没有子弹时，才可以发射
+    {
+        if (fire && !dead) {
+        	int i;
+            for (i = 0; i < 3; i++) {
 
-
-    if (fire && !dead) {
-    	int i;
-        for (i = 0; i < 3; i++) {
-
-            missile[i][0] = 15;
-            pos = Wheel_getValue();
-            if (pos > 0x824) {
-                pos = (0xFFF - pos) / 32;
-            } else {
-                pos = pos / 32;
+                missile[i][0] = 15;
+                pos = Wheel_getValue();
+                if (pos > 0x824) {
+                    pos = (0xFFF - pos) / 32;
+                } else {
+                    pos = pos / 32;
+                }
+                if (pos > 56) {
+                    pos = 56;
+                }
+                missile[i][1] = pos + 8 + i * interval;
             }
-            if (pos > 56) {
-                pos = 56;
-            }
-            missile[i][1] = pos + 8 + i * interval;
+        }else{
+        	return -1;
         }
     }
 
+
+
     int i;
+
     for ( i = 0; i < 3; i++) {
+    	if(missile[i][0] == -1 && missile[i][1] == -1)
+    	{
+    		continue;
+    	}
         // Move the missile to the right.
         missile[i][0] += 2;
 
@@ -747,6 +787,18 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
                     ((mines[bit][1] + mines[bit][0] + 7) >= x) &&
                     (mines[bit][2] <= missile[i][1]) &&
                     ((mines[bit][2] + mines[bit][0] + 7) >= missile[i][1])) {
+    				//击碎了激光石
+    				if(mines[bit][0] == 2)
+    				{
+    					returner = 2;
+    				}
+    				//击碎了保护石
+    				/*if(mines[bit][0] == 3)
+    				{
+    					(*protecter) = 1;
+    				}*/
+
+
                     // This mine was struck, so remove it from the display.
                     mines[bit][0] = -1;
                     mines[bit][1] = -1;
@@ -770,6 +822,8 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
                                         explosions[bit][2] = missile[i][1] - 1;
                                     }
                     }
+                    missile[i][0] = -1;
+					missile[i][1] = -1;
                     // Stop looking through the mines.
                     break;
                 }
@@ -797,6 +851,8 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
     			            break;
     			        }
     			    }
+                    missile[i][0] = -1;
+                    missile[i][1] = -1;
     			    if (!dead)
     				{
     					score += 25;
@@ -814,6 +870,71 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
             //missile[i][1] = -1;
         }
     }
+    return returner;
+}
+
+//当攻击方式为射线时，调用此函数，射线击碎的石头不会产生特殊效果
+int UpdateMissile1(uint8_t fire, uint8_t dead)
+{
+
+    uint16_t pos;
+	if (fire && !dead)
+	{
+        missile[0][0] =-1;
+        missile[0][1] =-1;
+        missile[1][0] =-1;
+        missile[1][1] =-1;
+        missile[2][0] =-1;
+        missile[2][1] =-1;
+		//vertical position
+		pos = Wheel_getValue();
+		if (pos > 0x824)
+		{
+			//Scale pos for size of screen. pos range is (0~63)
+			pos = (0xFFF - pos) / 32;
+		}
+		else
+		{
+			pos = pos / 32;
+		}
+
+		if (pos > 56)
+		{
+			// Don't let ship go off bottom of screen.
+			pos = 56;
+		}
+		laserBar[0] = 15;  //horizontal
+		laserBar[1] = pos + 6; //vertical
+		DrawImage(laser, laserBar[0], laserBar[1], 86);
+	}
+	else
+	{
+		// do nothing because no missile fired or in flight
+		return 2;
+	}
+    // See if the missile hit something.
+        // Loop through the mines.
+    	// newly-origin
+	int bit;
+	for (bit = 0; bit < 5; bit++)
+	{
+		// See if the laser hit this mine.
+		if ((mines[bit][0] != -1) && (laserBar[1] >= mines[bit][2]) && (laserBar[1] <= mines[bit][2] + 8))
+		{
+			// This mine was struck, so remove it from the display.
+			explosions[bit][0] = 0;
+			explosions[bit][1] = mines[bit][1] - 1;
+			explosions[bit][2] = mines[bit][2];
+			mines[bit][0] = -1;
+			mines[bit][1] = -1;
+			mines[bit][2] = -1;
+			if (!dead)
+			{
+				score += 25;
+			}
+		}
+	}
+	return 0;
 }
 
 /***************************************************************************//**
@@ -963,7 +1084,7 @@ void LaunchpadDef(void)
     char scoreString[6];
     int switcher = 0;
     int returner = 0;
-	int protecter = 0;
+	//int protecter = 0;
 
     buttonsPressed = 0;
     __enable_interrupt();
@@ -1052,12 +1173,21 @@ void LaunchpadDef(void)
                 buttonsPressed = 0;
                 if (dead)
                 {
+                	returner = 0;
                     timeout++;
                 }
                 if (!dead)
                 {
                     dead = DrawShip();
-                    UpdateMissile(fire, dead);
+                    if(returner != 2)
+                    {
+                    	returner = UpdateMissile(fire, dead,returner);         //更新导弹
+
+
+                    }else if(returner == 2){
+                    	returner = UpdateMissile1(fire, dead);
+                    }
+
                 }
                 DrawExplosions();
                 RandomAddEntropy(score);
@@ -1118,6 +1248,7 @@ void LaunchpadDef(void)
 
             if (buttonsPressed & BUTTON_S2)
             {
+            	returner = 0;
                 Dogs102x6_clearScreen();
                 buttonsPressed = 0;
                 break;

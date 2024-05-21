@@ -541,3 +541,389 @@ D:\develop\MSP430\ccsv5\utils\bin\gmake -k all
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1144: error #141: too many arguments in function call
+"../lab7.c", line 1144: error #515: a value of type "void" cannot be assigned to an entity of type "int"
+2 errors detected in the compilation of "../lab7.c".
+
+>> Compilation failure
+gmake: *** [lab7.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 777: error #20: identifier "returner" is undefined
+"../lab7.c", line 847: error #20: identifier "returner" is undefined
+"../lab7.c", line 853: warning #994-D: missing return statement at end of non-void function "UpdateMissile"
+"../lab7.c", line 1159: error #141: too many arguments in function call
+3 errors detected in the compilation of "../lab7.c".
+
+>> Compilation failure
+gmake: *** [lab7.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 853: warning #994-D: missing return statement at end of non-void function "UpdateMissile"
+"../lab7.c", line 1060: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 851: warning #994-D: missing return statement at end of non-void function "UpdateMissile"
+"../lab7.c", line 1058: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 852: warning #994-D: missing return statement at end of non-void function "UpdateMissile"
+"../lab7.c", line 1059: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1060: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1060: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1066: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1066: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1068: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1068: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1075: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1075: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 1076: warning #179-D: variable "protecter" was declared but never referenced
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 730: error #138: expression must be a modifiable lvalue
+"../lab7.c", line 728: warning #179-D: variable "count_1" was declared but never referenced
+"../lab7.c", line 1081: warning #179-D: variable "protecter" was declared but never referenced
+1 error detected in the compilation of "../lab7.c".
+
+>> Compilation failure
+gmake: *** [lab7.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 730: error #138: expression must be a modifiable lvalue
+"../lab7.c", line 728: warning #179-D: variable "count_1" was declared but never referenced
+1 error detected in the compilation of "../lab7.c".
+
+>> Compilation failure
+gmake: *** [lab7.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+"../lab7.c", line 730: error #138: expression must be a modifiable lvalue
+1 error detected in the compilation of "../lab7.c".
+
+>> Compilation failure
+gmake: *** [lab7.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LAB7 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab7.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/worksheet/LAB7/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/worksheet/LAB7/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/worksheet/LAB7/FatFs" --include_path="D:/develop/MSP430/worksheet/LAB7/CTS" --include_path="D:/develop/MSP430/worksheet/LAB7/USB" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_User" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_API" --include_path="D:/develop/MSP430/worksheet/LAB7/USB/USB_config" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo" --include_path="D:/develop/MSP430/worksheet/LAB7/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab7.pp"  "../lab7.c"
+'Finished building: ../lab7.c'
+' '
+'Building target: LAB7.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB7.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB7.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./UserExperienceDemo/mouse.obj" "./system_pre_init.obj" "./lab7.obj" "./LAB7main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB7.out'
+' '
+
+**** Build Finished ****
