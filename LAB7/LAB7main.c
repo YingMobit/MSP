@@ -98,7 +98,7 @@ static const uint8_t tiBug[] =
 };
 
 
-void main(void){
+qvoid main(void){
     uint8_t contrast = *((unsigned char *)contrastSetpointAddress);            //读取FLASH中对比度值
     uint8_t brightness = *((unsigned char *)brightnessSetpointAddress);        //读取FLASH中背光值
 
