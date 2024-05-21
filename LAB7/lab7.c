@@ -19,6 +19,7 @@
 #include "LaunchpadDef.h"
 #include "Random.h"
 
+
 char *strrev(char *);
 char *itoa(int, char *, int);
 
@@ -54,9 +55,26 @@ void lab7(void)
 	        }
 }
 
+
+
+
+
+
 // Get a new random number via a fast linear congruence generator.
 #define NEXT_RAND(x)            (((x) * 1664525) + 1013904223)
-
+//随机数
+#define R1 1664525
+#define R2 1013904223
+#define R3 4294967296
+unsigned int seed = 1;
+unsigned int lcg() {
+    seed = (R1 * seed + R2) % R3;
+    return seed;
+}
+int simple_random_choice() {
+    unsigned int random_value = lcg();
+    return random_value % 2;
+}
 // This image has been created by ImageDog using '280px-Learning_Community.jpg'
 static const uint8_t image[] =
 {
@@ -122,6 +140,11 @@ const uint8_t Game_mine1[] = {
 const uint8_t piece[] =
 {
 	0x0C,0x1E,0x1E,0x0C
+};
+//陨石1被击碎后的粉尘
+const uint8_t dust[] =
+{
+	0xC0,0xC0
 };
 
 
@@ -190,6 +213,7 @@ uint8_t offset[2];
 // position (in index two).  If all three variables are negative one, then that
 // mine does not exist.
 int8_t mines[5][4];
+int8_t dusts[5][2];
 
 // The location of the missile, if it has been fired.  The first entry contains
 // the horizontal position and the second entry contains the vertical position.
@@ -348,6 +372,7 @@ void DrawImage(const uint8_t *image, uint8_t x, uint8_t y, uint8_t width)
  * @return none
  ******************************************************************************/
 
+/*
 void UpdateMines(void)
 {
     uint8_t count, max;
@@ -463,6 +488,174 @@ void UpdateMines(void)
         DrawImage(Game_mine2, mines[count][1], mines[count][2], 8);
     }
 }
+*/
+
+
+void UpdateMines1(int* switcher)
+{
+    uint8_t count, max;
+    uint32_t idx;
+
+    // The maximum horizontal position of any mine found.
+    max = 0;
+
+    /*移动已存在的陨石*/
+    for (count = 0; count < 5; count++)
+    {
+        if ((mines[count][0] == -1) && (mines[count][1] == -1) && (mines[count][2] == -1))//三者为-1表示这个陨石不存在
+        {
+            // Skip this mine if it does not exist.
+            continue;
+        }
+
+        // Move the mine one step to the left
+        mines[count][1]--;
+        //随机决定上下移动
+        int choice = simple_random_choice();
+        if(choice == 0 && mines[count][2] <= 44)
+        {
+        	mines[count][2]++;
+        }
+        if(choice == 1 && mines[count][2] >= 20)
+        {
+        	mines[count][2]--;
+        }
+
+        // If the mine is too far off the left edge of the display then disable it.
+        if (mines[count][1] == -8)
+        {
+            mines[count][0] = -1;
+            mines[count][1] = -1;
+            mines[count][2] = -1;
+            continue;
+        }
+
+        // See if this mine is furthest to the right so far.
+        if ((mines[count][1] + 9) > max)
+        {
+            // Set the new maximal mine position.
+            max = mines[count][1] + 9;
+        }
+
+        // See which type of mine this is.
+        if (mines[count][0] == 0)
+        {
+            // Draw mine type one
+            DrawImage(Game_mine1, mines[count][1], mines[count][2], 6);
+        }
+        else if(mines[count][0] == -2){
+        	DrawImage(piece, mines[count][1], mines[count][2], 4);
+        }
+        else if(mines[count][0] == 1)
+        {
+            // Draw mine type twos
+            DrawImage(Game_mine2, mines[count][1], mines[count][2], 8);
+        }
+        /*else if(mines[count][0] == 2)
+        {
+        	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
+        }
+        else if(mines[count][0] == 3)
+        {
+        	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
+        }
+        else if(mines[count][0] == 4)
+        {
+        	DrawImage(Game_mine5, mines[count][1], mines[count][2], 3);
+        }*/
+
+    }
+    /*左移两格粉尘*/
+    int dustIndex;
+    for (dustIndex = 0; dustIndex < 5; dustIndex++)
+    {
+        if ((dusts[dustIndex][0] == -1) && (dusts[dustIndex][1] == -1))
+        {
+            // Skip this dust if it does not exist.
+            continue;
+        }
+
+        // Move the dust two step to the left
+        dusts[dustIndex][0] -= 2;
+
+        // If the dust is too far off the left edge of the display then disable it.
+        if (dusts[dustIndex][0] <= -8)
+        {
+            dusts[dustIndex][0] = -1;
+            dusts[dustIndex][1] = -1;
+            continue;
+        }
+
+		DrawImage(dust, dusts[dustIndex][0], dusts[dustIndex][1], 2);
+
+    }
+
+
+    /*限制陨石生成条件*/
+    // If there are mines too close to the right side of the display then do not
+    // place any new mines.
+    if (max > 85)
+    {
+        return;
+    }
+    // Only place new mines occasionally.
+    idx = RandomNumber();
+    if (idx >= 0x0c000000)
+    {
+        return;
+    }
+
+    // Try to find an unused mine entry.
+    for (count = 0; count < 5; count++)
+    {
+        if ((mines[count][0] == -1) && (mines[count][1] == -1) && (mines[count][2] == -1))
+        {
+            break;
+        }
+    }
+    if (count == 5)
+    {
+        // If all five mines are already in use, then a new mine can not be
+        // added.
+        return;
+    }
+
+
+    // The mine starts at the right edge of the display.
+    mines[count][1] = 94;
+    // Choose a random vertical position
+    idx = NEXT_RAND(idx);
+    mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
+
+    //switch type
+    mines[count][0] = (*switcher)%5;
+    (*switcher)++;
+    if((*switcher) == 5){
+    	(*switcher) = 0;
+    }
+    if (mines[count][0] == 0)
+    {
+        // Draw mine type one on the local frame buffer.
+        DrawImage(Game_mine1, mines[count][1], mines[count][2], 6);
+    }
+    else if(mines[count][0] == 1)
+    {
+        // Draw mine type two on the local frame buffer.
+        DrawImage(Game_mine2, mines[count][1], mines[count][2], 8);
+    }
+    /*else if(mines[count][0] == 2)
+    {
+    	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
+    }
+    else if(mines[count][0] == 3)
+    {
+    	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
+    }
+    else if(mines[count][0] == 4)
+	{
+		DrawImage(Game_mine5, mines[count][1], mines[count][2], 3);
+	}*/
+}
 
 /***************************************************************************//**
  * @brief  Move the missile further to the right, checking for impacts.
@@ -548,7 +741,9 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
             // Loop through the mines.
             for (bit = 0; bit < 5; bit++) {
                 // See if the missile hit this mine.
-                if ((mines[bit][0] != -1) && (mines[bit][1] <= x) &&
+                if ((mines[bit][0] != 0) &&
+					(mines[bit][0] != -1) &&
+					(mines[bit][1] <= x) &&
                     ((mines[bit][1] + mines[bit][0] + 7) >= x) &&
                     (mines[bit][2] <= missile[i][1]) &&
                     ((mines[bit][2] + mines[bit][0] + 7) >= missile[i][1])) {
@@ -578,6 +773,38 @@ void UpdateMissile(uint8_t fire, uint8_t dead) {
                     // Stop looking through the mines.
                     break;
                 }
+
+    			//处理陨石类型1(会爆炸)
+    			if ((mines[bit][0] == 0) &&
+    				(mines[bit][1] <= x) &&
+    				((mines[bit][1] + mines[bit][0] + 7) >= x) &&
+    				 (mines[bit][2] <= missile[i][1]) &&
+					((mines[bit][2] + mines[bit][0] + 7) >= missile[i][1]))
+    			{
+
+    				mines[bit][0] = -2;
+    				DrawImage(piece, mines[bit][1]+2, mines[bit][2], 4);
+    				// Try to find an unused mine entry.
+    				int dustIndex;
+    			    for (dustIndex = 0; dustIndex < 5; dustIndex++)
+    			    {
+    			        if ((dusts[dustIndex][0] == -1) && (dusts[dustIndex][1] == -1))
+    			        {
+    			        	//draw dust according to position of mine
+    			        	dusts[dustIndex][0] = mines[bit][1];
+    			        	dusts[dustIndex][1] = mines[bit][2];
+    			        	DrawImage(dust, dusts[dustIndex][0], dusts[dustIndex][1], 2);
+    			            break;
+    			        }
+    			    }
+    			    if (!dead)
+    				{
+    					score += 25;
+    				}
+
+    				// Stop looking through the mines.
+    				break;
+    			}
             }
 
 
@@ -729,11 +956,14 @@ void DrawExplosions(void)
 
 void LaunchpadDef(void)
 {
-    uint32_t idx, a;
+    uint32_t idx, a, dustIndex;
     uint8_t dead, timeout;
     uint8_t fire;
     uint8_t restart = 0;
     char scoreString[6];
+    int switcher = 0;
+    int returner = 0;
+	int protecter = 0;
 
     buttonsPressed = 0;
     __enable_interrupt();
@@ -754,13 +984,8 @@ void LaunchpadDef(void)
         while (1)
         {
             restart = 0;
-
-
-
-
             offset[0] = 10;
             offset[1] = 10;
-
 
             for (idx = 0; idx < 5; idx++)
             {
@@ -769,6 +994,11 @@ void LaunchpadDef(void)
                 mines[idx][2] = -1;
             }
 
+            for (dustIndex = 0;dustIndex < 5;dustIndex++)
+            {
+            	dusts[dustIndex][0] = -1;
+            	dusts[dustIndex][1] = -1;
+            }
 
             missile[0][0] =-1;
             missile[0][1] =-1;
@@ -784,6 +1014,7 @@ void LaunchpadDef(void)
 
             dead = 0;
             timeout = 0;
+            score = 0;
 
             Dogs102x6_clearScreen();
 
@@ -814,7 +1045,8 @@ void LaunchpadDef(void)
                 // up.
 
                 UpdateBackground(30 - (score / 500));
-                UpdateMines();
+                //UpdateMines();
+                UpdateMines1(&switcher);
                 if (buttonsPressed) fire = 1;
                 else fire = 0;
                 buttonsPressed = 0;

@@ -55,6 +55,7 @@
 #include "Mouse.h"
 #include "PMM.h"
 #include "lab7.h"
+
 uint16_t timeoutCounter;
 
 // This image has been created by ImageDog using 'ti_bug.jpg'
@@ -98,7 +99,7 @@ static const uint8_t tiBug[] =
 };
 
 
-qvoid main(void){
+void main(void){
     uint8_t contrast = *((unsigned char *)contrastSetpointAddress);            //读取FLASH中对比度值
     uint8_t brightness = *((unsigned char *)brightnessSetpointAddress);        //读取FLASH中背光值
 

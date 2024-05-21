@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v4.0.0                      
 ******************************************************************************
->> Linked Sat May 11 23:44:42 2024
+>> Linked Tue May 21 20:20:49 2024
 
 OUTPUT FILE NAME:   <LAB7.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000462e
@@ -18,8 +18,8 @@ MEMORY CONFIGURATION
   INFOC                 00001880   00000080  00000000  00000080  RWIX
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
-  RAM                   00002400   00002000  000013be  00000c42  RWIX
-  FLASH                 00004400   0000bb80  00006795  000053eb  RWIX
+  RAM                   00002400   00002000  000013ca  00000c36  RWIX
+  FLASH                 00004400   0000bb80  00006a45  0000513b  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -94,30 +94,30 @@ section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
 .pinit     0    00004400    00000000     UNINITIALIZED
 
-.bss       0    00002400    0000131e     UNINITIALIZED
-                  00002400    000006b8     lab7.obj (.bss)
-                  00002ab8    00000614     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.bss)
-                  000030cc    00000346                            : HAL_Dogs102x6.obj (.bss)
-                  00003412    000001d6                            : UsbMscScsi.obj (.bss)
-                  000035e8    00000048                            : usb.obj (.bss)
-                  00003630    00000044                            : Random.obj (.bss)
-                  00003674    0000002e                            : UsbCdc.obj (.bss)
-                  000036a2    00000024                            : UsbHid.obj (.bss)
-                  000036c6    0000001f     UsbMscUser.obj (.bss)
-                  000036e5    00000008     MSP-EXP430F5529_UE.lib : HAL_Cma3000.obj (.bss)
-                  000036ed    00000001                            : MassStorage.obj (.bss)
-                  000036ee    00000008                            : dma.obj (.bss)
-                  000036f6    00000008     rts430xl.lib : _lock.obj (.bss)
-                  000036fe    00000008                  : boot.obj (.bss)
-                  00003706    00000005     mouse.obj (.bss)
-                  0000370b    00000001     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.bss)
-                  0000370c    00000004                            : HAL_Buttons.obj (.bss)
-                  00003710    00000004                            : HAL_Wheel.obj (.bss)
-                  00003714    00000003                            : mmc.obj (.bss)
-                  00003717    00000001     --HOLE--
-                  00003718    00000002     LAB7main.obj (.bss)
-                  0000371a    00000002     MSP-EXP430F5529_UE.lib : UsbMscReq.obj (.bss)
-                  0000371c    00000002                            : UsbMscStateMachine.obj (.bss)
+.bss       0    00002400    0000132a     UNINITIALIZED
+                  00002400    000006c4     lab7.obj (.bss)
+                  00002ac4    00000614     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.bss)
+                  000030d8    00000346                            : HAL_Dogs102x6.obj (.bss)
+                  0000341e    000001d6                            : UsbMscScsi.obj (.bss)
+                  000035f4    00000048                            : usb.obj (.bss)
+                  0000363c    00000044                            : Random.obj (.bss)
+                  00003680    0000002e                            : UsbCdc.obj (.bss)
+                  000036ae    00000024                            : UsbHid.obj (.bss)
+                  000036d2    0000001f     UsbMscUser.obj (.bss)
+                  000036f1    00000008     MSP-EXP430F5529_UE.lib : HAL_Cma3000.obj (.bss)
+                  000036f9    00000001                            : MassStorage.obj (.bss)
+                  000036fa    00000008                            : dma.obj (.bss)
+                  00003702    00000008     rts430xl.lib : _lock.obj (.bss)
+                  0000370a    00000008                  : boot.obj (.bss)
+                  00003712    00000005     mouse.obj (.bss)
+                  00003717    00000001     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.bss)
+                  00003718    00000004                            : HAL_Buttons.obj (.bss)
+                  0000371c    00000004                            : HAL_Wheel.obj (.bss)
+                  00003720    00000003                            : mmc.obj (.bss)
+                  00003723    00000001     --HOLE--
+                  00003724    00000002     LAB7main.obj (.bss)
+                  00003726    00000002     MSP-EXP430F5529_UE.lib : UsbMscReq.obj (.bss)
+                  00003728    00000002                            : UsbMscStateMachine.obj (.bss)
 
 .stack     0    00004360    000000a0     UNINITIALIZED
                   00004360    00000004     rts430xl.lib : boot.obj (.stack)
@@ -134,281 +134,285 @@ section   page    origin      length       input sections
                   00004672    00000018     mouse.obj (.text:_isr:TIMER2_A0_ISR)
                   0000468a    00000016     MSP-EXP430F5529_UE.lib : HAL_Wheel.obj (.text:_isr:ADC12_ISR)
 
-.cinit     0    000046a0    00000186     
+.cinit     0    000046a0    0000018e     
                   000046a0    00000052     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.cinit)
-                  000046f2    00000037     lab7.obj (.cinit)
-                  00004729    00000001     --HOLE-- [fill = 0]
-                  0000472a    00000036     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.cinit)
-                  00004760    00000026     UsbMscUser.obj (.cinit)
-                  00004786    00000021     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.cinit)
-                  000047a7    00000001     --HOLE-- [fill = 0]
-                  000047a8    00000017                            : usb.obj (.cinit)
-                  000047bf    00000001     --HOLE-- [fill = 0]
-                  000047c0    00000011     mouse.obj (.cinit)
-                  000047d1    00000001     --HOLE-- [fill = 0]
-                  000047d2    00000010     MSP-EXP430F5529_UE.lib : HAL_Buttons.obj (.cinit)
-                  000047e2    0000000f                            : MassStorageCommon.obj (.cinit)
-                  000047f1    00000001     --HOLE-- [fill = 0]
-                  000047f2    0000000f                            : mmc.obj (.cinit)
-                  00004801    00000001     --HOLE-- [fill = 0]
-                  00004802    0000000a                            : Random.obj (.cinit)
-                  0000480c    00000008                            : UsbMscReq.obj (.cinit)
-                  00004814    00000008                            : UsbMscStateMachine.obj (.cinit)
-                  0000481c    00000007                            : MassStorage.obj (.cinit)
-                  00004823    00000001     --HOLE-- [fill = 0]
-                  00004824    00000002     (.pad.cinit) [fill = 0]
+                  000046f2    0000003f     lab7.obj (.cinit)
+                  00004731    00000001     --HOLE-- [fill = 0]
+                  00004732    00000036     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.cinit)
+                  00004768    00000026     UsbMscUser.obj (.cinit)
+                  0000478e    00000021     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.cinit)
+                  000047af    00000001     --HOLE-- [fill = 0]
+                  000047b0    00000017                            : usb.obj (.cinit)
+                  000047c7    00000001     --HOLE-- [fill = 0]
+                  000047c8    00000011     mouse.obj (.cinit)
+                  000047d9    00000001     --HOLE-- [fill = 0]
+                  000047da    00000010     MSP-EXP430F5529_UE.lib : HAL_Buttons.obj (.cinit)
+                  000047ea    0000000f                            : MassStorageCommon.obj (.cinit)
+                  000047f9    00000001     --HOLE-- [fill = 0]
+                  000047fa    0000000f                            : mmc.obj (.cinit)
+                  00004809    00000001     --HOLE-- [fill = 0]
+                  0000480a    0000000a                            : Random.obj (.cinit)
+                  00004814    00000008                            : UsbMscReq.obj (.cinit)
+                  0000481c    00000008                            : UsbMscStateMachine.obj (.cinit)
+                  00004824    00000007                            : MassStorage.obj (.cinit)
+                  0000482b    00000001     --HOLE-- [fill = 0]
+                  0000482c    00000002     (.pad.cinit) [fill = 0]
 
-.text      0    00004826    000056b2     
-                  00004826    000004b2     MSP-EXP430F5529_UE.lib : Random.obj (.text:RandomNumber)
-                  00004cd8    00000416     lab7.obj (.text:LaunchpadDef)
-                  000050ee    00000406     lab7.obj (.text:UpdateMissile)
-                  000054f4    00000316     lab7.obj (.text:UpdateBackground)
-                  0000580a    000002c8     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:USBMSC_bufferProcessed)
-                  00005ad2    000001e6                            : UsbMscScsi.obj (.text:Scsi_Cmd_Parser)
-                  00005cb8    000001a2                            : UsbMscScsi.obj (.text:USBMSC_updateMediaInfo)
-                  00005e5a    0000019e                            : UsbMscScsi.obj (.text:MSCFromHostToBuffer)
-                  00005ff8    0000019a     lab7.obj (.text:UpdateMines)
-                  00006192    00000176     lab7.obj (.text:DrawExplosions)
-                  00006308    0000016e     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:CdcToHostFromBuffer)
-                  00006476    0000016c                            : UsbHid.obj (.text:HidToHostFromBuffer)
-                  000065e2    00000162                            : UsbMscScsi.obj (.text:MSCToHostFromBuffer)
-                  00006744    0000015a                            : UsbHid.obj (.text:HidToBufferFromHost)
-                  0000689e    00000158                            : usb.obj (.text:USB_reset)
-                  000069f6    00000144     LAB7main.obj (.text:main)
-                  00006b3a    00000142     mouse.obj (.text:Mouse)
-                  00006c7c    0000013c     MSP-EXP430F5529_UE.lib : mmc.obj (.text:disk_initialize)
-                  00006db8    0000013a     lab7.obj (.text:DrawShip)
-                  00006ef2    0000012e     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:CdcToBufferFromHost)
-                  00007020    00000124                            : UsbMscScsi.obj (.text:Scsi_Inquiry)
-                  00007144    000000fa                            : UsbMscStateMachine.obj (.text:USBMSC_poll)
-                  0000723e    000000ea                            : mmc.obj (.text:disk_ioctl)
-                  00007328    000000e4                            : HAL_Board.obj (.text:Board_init)
-                  0000740c    000000e4                            : HAL_UCS.obj (.text:Init_FLL)
-                  000074f0    000000da                            : usb.obj (.text:USB_InitSerialStringDescriptor)
-                  000075ca    000000d0                            : UsbMscScsi.obj (.text:Scsi_Request_Sense)
-                  0000769a    000000d0                            : UsbHid.obj (.text:USBHID_sendReport)
-                  0000776a    000000ce                            : UsbMscScsi.obj (.text:Check_CBW)
-                  00007838    000000ce                            : HAL_PMM.obj (.text:SetVCoreUp)
-                  00007906    000000c6                            : mmc.obj (.text:disk_write)
-                  000079cc    000000c0                            : UsbMscScsi.obj (.text:Scsi_Write10)
-                  00007a8c    000000be                            : UsbMscScsi.obj (.text:Scsi_Read10)
-                  00007b4a    000000b2                            : mmc.obj (.text:send_cmd)
-                  00007bfc    000000a2                            : HAL_Menu.obj (.text:Menu_active)
-                  00007c9e    000000a0                            : mmc.obj (.text:disk_read)
-                  00007d3e    0000009a                            : HAL_Cma3000.obj (.text:Cma3000_init)
-                  00007dd8    00000098                            : usb.obj (.text:usbDecodeAndProcessUsbRequest)
-                  00007e70    00000096                            : usb.obj (.text:USB_connectionState)
-                  00007f06    0000008c                            : HAL_PMM.obj (.text:SetVCoreDown)
-                  00007f92    0000008a                            : HAL_Dogs102x6.obj (.text:Dogs102x6_charDraw)
-                  0000801c    00000088                            : usb.obj (.text:USB_enable)
-                  000080a4    00000086                            : mmc.obj (.text:validateCSD)
-                  0000812a    00000084                            : UsbCdc.obj (.text:CopyUsbToBuff)
-                  000081ae    00000084                            : UsbHid.obj (.text:HidCopyUsbToBuff)
-                  00008232    00000080     lab7.obj (.text:DrawImage)
-                  000082b2    0000007a     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_stringDraw)
-                  0000832c    0000007a                            : UsbMscScsi.obj (.text:Scsi_Unknown_Request)
-                  000083a6    00000078                            : HAL_Dogs102x6.obj (.text:Dogs102x6_init)
-                  0000841e    00000074                            : usb.obj (.text:usbSendNextPacketOnIEP0)
-                  00008492    00000070                            : MassStorageCommon.obj (.text:read_LUN0)
-                  00008502    00000070                            : usb.obj (.text:usbGetEndpointStatus)
-                  00008572    0000006e                            : HAL_Dogs102x6.obj (.text:Dogs102x6_writeData)
-                  000085e0    0000006e                            : UsbMscScsi.obj (.text:MscCopyUsbToBuff)
-                  0000864e    0000006e                            : MassStorageCommon.obj (.text:write_LUN0)
-                  000086bc    00000068                            : usb.obj (.text:usbClearEndpointFeature)
-                  00008724    00000064                            : UsbMscScsi.obj (.text:Msc_ResetStruct)
-                  00008788    00000064                            : UsbMscScsi.obj (.text:Reset_RequestSenseResponse)
-                  000087ec    00000062                            : HAL_TLV.obj (.text:Get_TLV_Info)
-                  0000884e    00000060                            : UsbMscScsi.obj (.text:MscSendData)
-                  000088ae    0000005c                            : UsbMscScsi.obj (.text:Scsi_Verify_CBW)
-                  0000890a    0000005c     rts430xl.lib : autoinit.obj (.text:_auto_init)
-                  00008966    0000005a     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.text:checkInsertionRemoval)
-                  000089c0    0000005a                            : MassStorageCommon.obj (.text:msc_Init)
-                  00008a1a    00000058                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setAddress)
-                  00008a72    00000058     rts430xl.lib : div32u.obj (.text)
-                  00008aca    00000056     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_clearRow)
-                  00008b20    00000056                            : usb.obj (.text:USB_init)
-                  00008b76    00000054                            : HAL_Wheel.obj (.text:Wheel_getValue)
-                  00008bca    00000054                            : mmc.obj (.text:xmit_datablock)
-                  00008c1e    0000004e                            : HAL_Board.obj (.text:Board_ledOff)
-                  00008c6c    0000004e                            : HAL_Board.obj (.text:Board_ledToggle)
-                  00008cba    0000004e     UsbIsr.obj (.text:OEP0InterruptHandler)
-                  00008d08    0000004e     MSP-EXP430F5529_UE.lib : mmc.obj (.text:rcvr_datablock)
-                  00008d56    0000004c                            : MassStorageCommon.obj (.text:msc_Loop)
-                  00008da2    0000004a                            : HAL_Cma3000.obj (.text:Cma3000_readRegister)
-                  00008dec    0000004a                            : HAL_Cma3000.obj (.text:Cma3000_writeRegister)
-                  00008e36    0000004a                            : HAL_SDCard.obj (.text:SDCard_init)
-                  00008e80    00000048                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearImage)
-                  00008ec8    00000048     UsbIsr.obj (.text:PWRVBUSoffHandler)
-                  00008f10    00000048     UsbIsr.obj (.text:SetupPacketInterruptHandler)
-                  00008f58    00000048     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbReceiveNextPacketOnOEP0)
-                  00008fa0    00000044                            : usb.obj (.text:usbGetStringDescriptor)
-                  00008fe4    00000044                            : usb.obj (.text:usbSetEndpointFeature)
-                  00009028    00000042                            : UsbMscReq.obj (.text:USBMSC_reset)
-                  0000906a    00000040                            : HAL_Cma3000.obj (.text:Cma3000_readAccel)
-                  000090aa    00000040                            : HAL_Dogs102x6.obj (.text:Dogs102x6_imageDraw)
-                  000090ea    00000040     lab7.obj (.text:lab7)
-                  0000912a    00000040     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:usbGetLineCoding0)
-                  0000916a    00000040                            : usb.obj (.text:usbSetInterface)
-                  000091aa    0000003e                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setBacklight)
-                  000091e8    0000003e                            : HAL_PMM.obj (.text:SetVCore)
-                  00009226    0000003e                            : UsbMscScsi.obj (.text:USBMSC_getState)
-                  00009264    0000003e     rts430xl.lib : lsl32.obj (.text:l_lsl_const)
-                  000092a2    0000003e                  : lsr32.obj (.text:l_lsr_const)
-                  000092e0    0000003c     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_writeCommand)
-                  0000931c    0000003c                            : UsbMscScsi.obj (.text:Scsi_Send_CSW)
-                  00009358    00000038                            : HAL_UCS.obj (.text:LFXT_Start)
-                  00009390    00000036                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearScreen)
-                  000093c6    00000036     UsbIsr.obj (.text:PWRVBUSonHandler)
-                  000093fc    00000036     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:Scsi_Mode_Sense10)
-                  00009432    00000036                            : UsbMscScsi.obj (.text:Scsi_Mode_Sense6)
-                  00009468    00000036                            : HAL_Wheel.obj (.text:Wheel_getPosition)
-                  0000949e    00000032                            : UsbCdc.obj (.text:CdcIsReceiveInProgress)
-                  000094d0    00000032                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setContrast)
-                  00009502    00000032                            : UsbHid.obj (.text:HidIsReceiveInProgress)
-                  00009534    00000032                            : HAL_UCS.obj (.text:Init_FLL_Settle)
-                  00009566    00000032                            : HAL_SDCard.obj (.text:SDCard_readFrame)
-                  00009598    00000032                            : usb.obj (.text:USB_connectionInfo)
-                  000095ca    00000032                            : usb.obj (.text:USB_suspend)
-                  000095fc    00000032                            : mmc.obj (.text:wait_ready)
-                  0000962e    00000030                            : HAL_Dogs102x6.obj (.text:Dogs102x6_backlightInit)
-                  0000965e    00000030                            : HAL_UCS.obj (.text:XT2_Start)
-                  0000968e    00000030                            : mmc.obj (.text:detectCard)
-                  000096be    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding0)
-                  000096ec    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding1)
-                  0000971a    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding2)
-                  00009748    0000002e                            : UsbMscScsi.obj (.text:MscResetData)
-                  00009776    0000002e                            : UsbMscScsi.obj (.text:USBMSC_registerBufInfo)
-                  000097a4    0000002e                            : UsbMscScsi.obj (.text:usbStallEndpoint)
-                  000097d2    0000002c                            : UsbMscScsi.obj (.text:Scsi_Read_Capacity10)
-                  000097fe    0000002c                            : dma.obj (.text:memcpyDMA0)
-                  0000982a    0000002c     rts430xl.lib : div16s.obj (.text)
-                  00009856    0000002c     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.text:usbGetHidDescriptor)
-                  00009882    0000002a                            : UsbCdc.obj (.text:CdcResetData)
-                  000098ac    0000002a                            : UsbHid.obj (.text:HidResetData)
-                  000098d6    0000002a     rts430xl.lib : memcpy.obj (.text:memcpy)
-                  00009900    00000028     MSP-EXP430F5529_UE.lib : HAL_SDCard.obj (.text:SDCard_sendFrame)
-                  00009928    00000028                            : UsbMscScsi.obj (.text:SET_RequestsenseMediaNotPresent)
-                  00009950    00000028                            : UsbMscScsi.obj (.text:SET_RequestsenseNotReady)
-                  00009978    00000028                            : UsbMscScsi.obj (.text:Scsi_Report_Luns)
-                  000099a0    00000028                            : usb.obj (.text:USB_connect)
-                  000099c8    00000028                            : dma.obj (.text:USB_initMemcpy)
-                  000099f0    00000028                            : usb.obj (.text:usbGetDeviceStatus)
-                  00009a18    00000026                            : HAL_Wheel.obj (.text:Wheel_init)
-                  00009a3e    00000024                            : HAL_Cma3000.obj (.text:Cma3000_disable)
-                  00009a62    00000024                            : Random.obj (.text:RandomAddEntropy)
-                  00009a86    00000022                            : usb.obj (.text:USB_disable)
-                  00009aa8    00000022     rts430xl.lib : mult32_f5hw.obj (.text)
-                  00009aca    00000020     MSP-EXP430F5529_UE.lib : mmc.obj (.text:disk_status)
-                  00009aea    00000020     rts430xl.lib : memset.obj (.text:memset)
-                  00009b0a    00000020     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbSendDataPacketOnEP0)
-                  00009b2a    0000001e                            : usb.obj (.text:usbSetConfiguration)
-                  00009b48    0000001c     UsbIsr.obj (.text:IEP0InterruptHandler)
-                  00009b64    0000001a     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbGetInterface)
-                  00009b7e    0000001a                            : usb.obj (.text:usbGetInterfaceStatus)
-                  00009b98    0000001a                            : usb.obj (.text:usbSetAddress)
-                  00009bb2    00000018                            : HAL_Cma3000.obj (.text:Cma3000_readAccel_offset)
-                  00009bca    00000018                            : UsbMscReq.obj (.text:Get_MaxLUN)
-                  00009be2    00000018                            : usb.obj (.text:USB_resume)
-                  00009bfa    00000018                            : mmc.obj (.text:select)
-                  00009c12    00000016                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearInverseDisplay)
-                  00009c28    00000016                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setInverseDisplay)
-                  00009c3e    00000016                            : UsbMscScsi.obj (.text:Scsi_Test_Unit_Ready)
-                  00009c54    00000016     rts430xl.lib : div16u.obj (.text)
-                  00009c6a    00000016                  : mult16_f5hw.obj (.text)
-                  00009c80    00000016     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.text:usbGetReport)
-                  00009c96    00000014     usb_eventHandling.obj (.text:USB_handleVbusOnEvent)
-                  00009caa    00000014     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:usbClearOEPByteCount)
-                  00009cbe    00000014                            : UsbMscScsi.obj (.text:usbStallInEndpoint)
-                  00009cd2    00000014                            : UsbMscScsi.obj (.text:usbStallOutEndpoint)
-                  00009ce6    00000012                            : HAL_Buttons.obj (.text:Buttons_interruptEnable)
-                  00009cf8    00000012                            : HAL_SDCard.obj (.text:SDCard_fastMode)
-                  00009d0a    00000012                            : mmc.obj (.text:deselect)
-                  00009d1c    00000012     rts430xl.lib : rotl32.obj (.text)
-                  00009d2e    00000012     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbClearDeviceFeature)
-                  00009d40    00000012                            : usb.obj (.text:usbGetConfigurationDescriptor)
-                  00009d52    00000012                            : usb.obj (.text:usbGetDeviceDescriptor)
-                  00009d64    00000012                            : usb.obj (.text:usbReceiveDataPacketOnEP0)
-                  00009d76    00000012                            : usb.obj (.text:usbSetDeviceFeature)
-                  00009d88    00000010                            : HAL_Buttons.obj (.text:Buttons_startWDT)
-                  00009d98    00000010     rts430xl.lib : lsl32.obj (.text:l_lsl)
-                  00009da8    00000010     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbGetConfiguration)
-                  00009db8    0000000e                            : HAL_Buttons.obj (.text:Buttons_init)
-                  00009dc6    0000000e                            : HAL_Cma3000.obj (.text:Cma3000_setAccel_offset)
-                  00009dd4    0000000e                            : UsbMscStateMachine.obj (.text:Msc_ResetStateMachine)
-                  00009de2    0000000e                            : UsbHidReq.obj (.text:usbGetReportDescriptor)
-                  00009df0    0000000e                            : usb.obj (.text:usbSendZeroLengthPacketOnIEP0)
-                  00009dfe    0000000c                            : UsbMscScsi.obj (.text:MscResetCtrlLun)
-                  00009e0a    0000000c                            : usb.obj (.text:usbInvalidRequest)
-                  00009e16    0000000a     system_pre_init.obj (.text:_system_pre_init)
-                  00009e20    0000000a     rts430xl.lib : asr16.obj (.text)
-                  00009e2a    0000000a                  : lsl16.obj (.text)
-                  00009e34    0000000a                  : lsr16.obj (.text)
-                  00009e3e    0000000a     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbStallEndpoint0)
-                  00009e48    00000008                            : UsbHidReportHandler.obj (.text:Handler_InFeature)
-                  00009e50    00000008                            : HAL_SDCard.obj (.text:SDCard_setCSHigh)
-                  00009e58    00000008                            : HAL_SDCard.obj (.text:SDCard_setCSLow)
-                  00009e60    00000008                            : usb.obj (.text:USB_setEnabledEvents)
-                  00009e68    00000008                            : UsbCdc.obj (.text:usbSetLineCoding0)
-                  00009e70    00000008                            : UsbHidReq.obj (.text:usbSetReport)
-                  00009e78    00000006                            : UsbMscScsi.obj (.text:Msc_ResetFlags)
-                  00009e7e    00000006                            : UsbMscScsi.obj (.text:USBMSC_fetchInfoStruct)
-                  00009e84    00000006                            : usb.obj (.text:usbClearOEP0ByteCount)
-                  00009e8a    00000006                            : usb.obj (.text:usbStallOEP0)
-                  00009e90    00000004     usb_eventHandling.obj (.text:USBCDC_handleDataReceived)
-                  00009e94    00000004     usb_eventHandling.obj (.text:USBCDC_handleReceiveCompleted)
-                  00009e98    00000004     usb_eventHandling.obj (.text:USBCDC_handleSendCompleted)
-                  00009e9c    00000004     usb_eventHandling.obj (.text:USBHID_handleDataReceived)
-                  00009ea0    00000004     usb_eventHandling.obj (.text:USBHID_handleReceiveCompleted)
-                  00009ea4    00000004     usb_eventHandling.obj (.text:USBHID_handleSendCompleted)
-                  00009ea8    00000004     usb_eventHandling.obj (.text:USBMSC_handleBufferEvent)
-                  00009eac    00000004     usb_eventHandling.obj (.text:USB_handleClockEvent)
-                  00009eb0    00000004     usb_eventHandling.obj (.text:USB_handleEnumCompleteEvent)
-                  00009eb4    00000004     usb_eventHandling.obj (.text:USB_handleResetEvent)
-                  00009eb8    00000004     usb_eventHandling.obj (.text:USB_handleResumeEvent)
-                  00009ebc    00000004     usb_eventHandling.obj (.text:USB_handleSuspendEvent)
-                  00009ec0    00000004     usb_eventHandling.obj (.text:USB_handleVbusOffEvent)
-                  00009ec4    00000004     rts430xl.lib : exit.obj (.text:abort)
-                  00009ec8    00000004     MSP-EXP430F5529_UE.lib : mmc.obj (.text:rcvr_mmc)
-                  00009ecc    00000004                            : UsbCdc.obj (.text:usbSetControlLineState)
-                  00009ed0    00000004                            : mmc.obj (.text:xmit_mmc)
-                  00009ed4    00000002                            : UsbHidReportHandler.obj (.text:Handler_InReport)
-                  00009ed6    00000002     rts430xl.lib : _lock.obj (.text:_nop)
+.text      0    0000482e    00005954     
+                  0000482e    00000532     lab7.obj (.text:UpdateMissile)
+                  00004d60    000004b2     MSP-EXP430F5529_UE.lib : Random.obj (.text:RandomNumber)
+                  00005212    00000458     lab7.obj (.text:LaunchpadDef)
+                  0000566a    00000316     lab7.obj (.text:UpdateBackground)
+                  00005980    000002c8     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:USBMSC_bufferProcessed)
+                  00005c48    000002b0     lab7.obj (.text:UpdateMines1)
+                  00005ef8    000001e6     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:Scsi_Cmd_Parser)
+                  000060de    000001a2                            : UsbMscScsi.obj (.text:USBMSC_updateMediaInfo)
+                  00006280    0000019e                            : UsbMscScsi.obj (.text:MSCFromHostToBuffer)
+                  0000641e    00000176     lab7.obj (.text:DrawExplosions)
+                  00006594    0000016e     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:CdcToHostFromBuffer)
+                  00006702    0000016c                            : UsbHid.obj (.text:HidToHostFromBuffer)
+                  0000686e    00000162                            : UsbMscScsi.obj (.text:MSCToHostFromBuffer)
+                  000069d0    0000015a                            : UsbHid.obj (.text:HidToBufferFromHost)
+                  00006b2a    00000158                            : usb.obj (.text:USB_reset)
+                  00006c82    00000144     LAB7main.obj (.text:main)
+                  00006dc6    00000142     mouse.obj (.text:Mouse)
+                  00006f08    0000013c     MSP-EXP430F5529_UE.lib : mmc.obj (.text:disk_initialize)
+                  00007044    0000013a     lab7.obj (.text:DrawShip)
+                  0000717e    0000012e     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:CdcToBufferFromHost)
+                  000072ac    00000124                            : UsbMscScsi.obj (.text:Scsi_Inquiry)
+                  000073d0    000000fa                            : UsbMscStateMachine.obj (.text:USBMSC_poll)
+                  000074ca    000000ea                            : mmc.obj (.text:disk_ioctl)
+                  000075b4    000000e4                            : HAL_Board.obj (.text:Board_init)
+                  00007698    000000e4                            : HAL_UCS.obj (.text:Init_FLL)
+                  0000777c    000000da                            : usb.obj (.text:USB_InitSerialStringDescriptor)
+                  00007856    000000d0                            : UsbMscScsi.obj (.text:Scsi_Request_Sense)
+                  00007926    000000d0                            : UsbHid.obj (.text:USBHID_sendReport)
+                  000079f6    000000ce                            : UsbMscScsi.obj (.text:Check_CBW)
+                  00007ac4    000000ce                            : HAL_PMM.obj (.text:SetVCoreUp)
+                  00007b92    000000c6                            : mmc.obj (.text:disk_write)
+                  00007c58    000000c0                            : UsbMscScsi.obj (.text:Scsi_Write10)
+                  00007d18    000000be                            : UsbMscScsi.obj (.text:Scsi_Read10)
+                  00007dd6    000000b2                            : mmc.obj (.text:send_cmd)
+                  00007e88    000000a2                            : HAL_Menu.obj (.text:Menu_active)
+                  00007f2a    000000a0                            : mmc.obj (.text:disk_read)
+                  00007fca    0000009a                            : HAL_Cma3000.obj (.text:Cma3000_init)
+                  00008064    00000098                            : usb.obj (.text:usbDecodeAndProcessUsbRequest)
+                  000080fc    00000096                            : usb.obj (.text:USB_connectionState)
+                  00008192    0000008c                            : HAL_PMM.obj (.text:SetVCoreDown)
+                  0000821e    0000008a                            : HAL_Dogs102x6.obj (.text:Dogs102x6_charDraw)
+                  000082a8    00000088                            : usb.obj (.text:USB_enable)
+                  00008330    00000086                            : mmc.obj (.text:validateCSD)
+                  000083b6    00000084                            : UsbCdc.obj (.text:CopyUsbToBuff)
+                  0000843a    00000084                            : UsbHid.obj (.text:HidCopyUsbToBuff)
+                  000084be    00000080     lab7.obj (.text:DrawImage)
+                  0000853e    0000007a     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_stringDraw)
+                  000085b8    0000007a                            : UsbMscScsi.obj (.text:Scsi_Unknown_Request)
+                  00008632    00000078                            : HAL_Dogs102x6.obj (.text:Dogs102x6_init)
+                  000086aa    00000074                            : usb.obj (.text:usbSendNextPacketOnIEP0)
+                  0000871e    00000070                            : MassStorageCommon.obj (.text:read_LUN0)
+                  0000878e    00000070                            : usb.obj (.text:usbGetEndpointStatus)
+                  000087fe    0000006e                            : HAL_Dogs102x6.obj (.text:Dogs102x6_writeData)
+                  0000886c    0000006e                            : UsbMscScsi.obj (.text:MscCopyUsbToBuff)
+                  000088da    0000006e                            : MassStorageCommon.obj (.text:write_LUN0)
+                  00008948    00000068                            : usb.obj (.text:usbClearEndpointFeature)
+                  000089b0    00000064                            : UsbMscScsi.obj (.text:Msc_ResetStruct)
+                  00008a14    00000064                            : UsbMscScsi.obj (.text:Reset_RequestSenseResponse)
+                  00008a78    00000062                            : HAL_TLV.obj (.text:Get_TLV_Info)
+                  00008ada    00000060                            : UsbMscScsi.obj (.text:MscSendData)
+                  00008b3a    0000005c                            : UsbMscScsi.obj (.text:Scsi_Verify_CBW)
+                  00008b96    0000005c     rts430xl.lib : autoinit.obj (.text:_auto_init)
+                  00008bf2    0000005a     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.text:checkInsertionRemoval)
+                  00008c4c    0000005a                            : MassStorageCommon.obj (.text:msc_Init)
+                  00008ca6    00000058                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setAddress)
+                  00008cfe    00000058     rts430xl.lib : div32u.obj (.text)
+                  00008d56    00000056     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_clearRow)
+                  00008dac    00000056                            : usb.obj (.text:USB_init)
+                  00008e02    00000054                            : HAL_Wheel.obj (.text:Wheel_getValue)
+                  00008e56    00000054                            : mmc.obj (.text:xmit_datablock)
+                  00008eaa    0000004e                            : HAL_Board.obj (.text:Board_ledOff)
+                  00008ef8    0000004e                            : HAL_Board.obj (.text:Board_ledToggle)
+                  00008f46    0000004e     UsbIsr.obj (.text:OEP0InterruptHandler)
+                  00008f94    0000004e     MSP-EXP430F5529_UE.lib : mmc.obj (.text:rcvr_datablock)
+                  00008fe2    0000004c                            : MassStorageCommon.obj (.text:msc_Loop)
+                  0000902e    0000004a                            : HAL_Cma3000.obj (.text:Cma3000_readRegister)
+                  00009078    0000004a                            : HAL_Cma3000.obj (.text:Cma3000_writeRegister)
+                  000090c2    0000004a                            : HAL_SDCard.obj (.text:SDCard_init)
+                  0000910c    00000048                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearImage)
+                  00009154    00000048     UsbIsr.obj (.text:PWRVBUSoffHandler)
+                  0000919c    00000048     UsbIsr.obj (.text:SetupPacketInterruptHandler)
+                  000091e4    00000048     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbReceiveNextPacketOnOEP0)
+                  0000922c    00000044                            : usb.obj (.text:usbGetStringDescriptor)
+                  00009270    00000044                            : usb.obj (.text:usbSetEndpointFeature)
+                  000092b4    00000042                            : UsbMscReq.obj (.text:USBMSC_reset)
+                  000092f6    00000040                            : HAL_Cma3000.obj (.text:Cma3000_readAccel)
+                  00009336    00000040                            : HAL_Dogs102x6.obj (.text:Dogs102x6_imageDraw)
+                  00009376    00000040     lab7.obj (.text:lab7)
+                  000093b6    00000040     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:usbGetLineCoding0)
+                  000093f6    00000040                            : usb.obj (.text:usbSetInterface)
+                  00009436    0000003e                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setBacklight)
+                  00009474    0000003e                            : HAL_PMM.obj (.text:SetVCore)
+                  000094b2    0000003e                            : UsbMscScsi.obj (.text:USBMSC_getState)
+                  000094f0    0000003e     rts430xl.lib : lsl32.obj (.text:l_lsl_const)
+                  0000952e    0000003e                  : lsr32.obj (.text:l_lsr_const)
+                  0000956c    0000003c     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.text:Dogs102x6_writeCommand)
+                  000095a8    0000003c                            : UsbMscScsi.obj (.text:Scsi_Send_CSW)
+                  000095e4    00000038                            : HAL_UCS.obj (.text:LFXT_Start)
+                  0000961c    00000036                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearScreen)
+                  00009652    00000036     UsbIsr.obj (.text:PWRVBUSonHandler)
+                  00009688    00000036     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:Scsi_Mode_Sense10)
+                  000096be    00000036                            : UsbMscScsi.obj (.text:Scsi_Mode_Sense6)
+                  000096f4    00000036                            : HAL_Wheel.obj (.text:Wheel_getPosition)
+                  0000972a    00000032                            : UsbCdc.obj (.text:CdcIsReceiveInProgress)
+                  0000975c    00000032                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setContrast)
+                  0000978e    00000032                            : UsbHid.obj (.text:HidIsReceiveInProgress)
+                  000097c0    00000032                            : HAL_UCS.obj (.text:Init_FLL_Settle)
+                  000097f2    00000032                            : HAL_SDCard.obj (.text:SDCard_readFrame)
+                  00009824    00000032                            : usb.obj (.text:USB_connectionInfo)
+                  00009856    00000032                            : usb.obj (.text:USB_suspend)
+                  00009888    00000032                            : mmc.obj (.text:wait_ready)
+                  000098ba    00000030                            : HAL_Dogs102x6.obj (.text:Dogs102x6_backlightInit)
+                  000098ea    00000030                            : HAL_UCS.obj (.text:XT2_Start)
+                  0000991a    00000030                            : mmc.obj (.text:detectCard)
+                  0000994a    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding0)
+                  00009978    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding1)
+                  000099a6    0000002e                            : UsbCdc.obj (.text:Handler_SetLineCoding2)
+                  000099d4    0000002e                            : UsbMscScsi.obj (.text:MscResetData)
+                  00009a02    0000002e                            : UsbMscScsi.obj (.text:USBMSC_registerBufInfo)
+                  00009a30    0000002e                            : UsbMscScsi.obj (.text:usbStallEndpoint)
+                  00009a5e    0000002c                            : UsbMscScsi.obj (.text:Scsi_Read_Capacity10)
+                  00009a8a    0000002c                            : dma.obj (.text:memcpyDMA0)
+                  00009ab6    0000002c     rts430xl.lib : div16s.obj (.text)
+                  00009ae2    0000002c     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.text:usbGetHidDescriptor)
+                  00009b0e    0000002a                            : UsbCdc.obj (.text:CdcResetData)
+                  00009b38    0000002a                            : UsbHid.obj (.text:HidResetData)
+                  00009b62    0000002a     rts430xl.lib : memcpy.obj (.text:memcpy)
+                  00009b8c    00000028     MSP-EXP430F5529_UE.lib : HAL_SDCard.obj (.text:SDCard_sendFrame)
+                  00009bb4    00000028                            : UsbMscScsi.obj (.text:SET_RequestsenseMediaNotPresent)
+                  00009bdc    00000028                            : UsbMscScsi.obj (.text:SET_RequestsenseNotReady)
+                  00009c04    00000028                            : UsbMscScsi.obj (.text:Scsi_Report_Luns)
+                  00009c2c    00000028                            : usb.obj (.text:USB_connect)
+                  00009c54    00000028                            : dma.obj (.text:USB_initMemcpy)
+                  00009c7c    00000028                            : usb.obj (.text:usbGetDeviceStatus)
+                  00009ca4    00000026                            : HAL_Wheel.obj (.text:Wheel_init)
+                  00009cca    00000024                            : HAL_Cma3000.obj (.text:Cma3000_disable)
+                  00009cee    00000024                            : Random.obj (.text:RandomAddEntropy)
+                  00009d12    00000022                            : usb.obj (.text:USB_disable)
+                  00009d34    00000022     rts430xl.lib : mult32_f5hw.obj (.text)
+                  00009d56    00000020     MSP-EXP430F5529_UE.lib : mmc.obj (.text:disk_status)
+                  00009d76    00000020     rts430xl.lib : memset.obj (.text:memset)
+                  00009d96    00000020     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbSendDataPacketOnEP0)
+                  00009db6    0000001e                            : usb.obj (.text:usbSetConfiguration)
+                  00009dd4    0000001c     UsbIsr.obj (.text:IEP0InterruptHandler)
+                  00009df0    0000001a     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbGetInterface)
+                  00009e0a    0000001a                            : usb.obj (.text:usbGetInterfaceStatus)
+                  00009e24    0000001a                            : usb.obj (.text:usbSetAddress)
+                  00009e3e    00000018                            : HAL_Cma3000.obj (.text:Cma3000_readAccel_offset)
+                  00009e56    00000018                            : UsbMscReq.obj (.text:Get_MaxLUN)
+                  00009e6e    00000018                            : usb.obj (.text:USB_resume)
+                  00009e86    00000018                            : mmc.obj (.text:select)
+                  00009e9e    00000016                            : HAL_Dogs102x6.obj (.text:Dogs102x6_clearInverseDisplay)
+                  00009eb4    00000016                            : HAL_Dogs102x6.obj (.text:Dogs102x6_setInverseDisplay)
+                  00009eca    00000016                            : UsbMscScsi.obj (.text:Scsi_Test_Unit_Ready)
+                  00009ee0    00000016     lab7.obj (.text:lcg)
+                  00009ef6    00000016     rts430xl.lib : div16u.obj (.text)
+                  00009f0c    00000016                  : mult16_f5hw.obj (.text)
+                  00009f22    00000016     MSP-EXP430F5529_UE.lib : UsbHidReq.obj (.text:usbGetReport)
+                  00009f38    00000014     usb_eventHandling.obj (.text:USB_handleVbusOnEvent)
+                  00009f4c    00000014     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.text:usbClearOEPByteCount)
+                  00009f60    00000014                            : UsbMscScsi.obj (.text:usbStallInEndpoint)
+                  00009f74    00000014                            : UsbMscScsi.obj (.text:usbStallOutEndpoint)
+                  00009f88    00000012                            : HAL_Buttons.obj (.text:Buttons_interruptEnable)
+                  00009f9a    00000012                            : HAL_SDCard.obj (.text:SDCard_fastMode)
+                  00009fac    00000012                            : mmc.obj (.text:deselect)
+                  00009fbe    00000012     rts430xl.lib : rotl32.obj (.text)
+                  00009fd0    00000012     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbClearDeviceFeature)
+                  00009fe2    00000012                            : usb.obj (.text:usbGetConfigurationDescriptor)
+                  00009ff4    00000012                            : usb.obj (.text:usbGetDeviceDescriptor)
+                  0000a006    00000012                            : usb.obj (.text:usbReceiveDataPacketOnEP0)
+                  0000a018    00000012                            : usb.obj (.text:usbSetDeviceFeature)
+                  0000a02a    00000010                            : HAL_Buttons.obj (.text:Buttons_startWDT)
+                  0000a03a    00000010     rts430xl.lib : lsl32.obj (.text:l_lsl)
+                  0000a04a    00000010     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbGetConfiguration)
+                  0000a05a    0000000e                            : HAL_Buttons.obj (.text:Buttons_init)
+                  0000a068    0000000e                            : HAL_Cma3000.obj (.text:Cma3000_setAccel_offset)
+                  0000a076    0000000e                            : UsbMscStateMachine.obj (.text:Msc_ResetStateMachine)
+                  0000a084    0000000e                            : UsbHidReq.obj (.text:usbGetReportDescriptor)
+                  0000a092    0000000e                            : usb.obj (.text:usbSendZeroLengthPacketOnIEP0)
+                  0000a0a0    0000000c                            : UsbMscScsi.obj (.text:MscResetCtrlLun)
+                  0000a0ac    0000000c                            : usb.obj (.text:usbInvalidRequest)
+                  0000a0b8    0000000a     system_pre_init.obj (.text:_system_pre_init)
+                  0000a0c2    0000000a     rts430xl.lib : asr16.obj (.text)
+                  0000a0cc    0000000a                  : lsl16.obj (.text)
+                  0000a0d6    0000000a                  : lsr16.obj (.text)
+                  0000a0e0    0000000a     MSP-EXP430F5529_UE.lib : usb.obj (.text:usbStallEndpoint0)
+                  0000a0ea    00000008                            : UsbHidReportHandler.obj (.text:Handler_InFeature)
+                  0000a0f2    00000008                            : HAL_SDCard.obj (.text:SDCard_setCSHigh)
+                  0000a0fa    00000008                            : HAL_SDCard.obj (.text:SDCard_setCSLow)
+                  0000a102    00000008                            : usb.obj (.text:USB_setEnabledEvents)
+                  0000a10a    00000008     lab7.obj (.text:simple_random_choice)
+                  0000a112    00000008     MSP-EXP430F5529_UE.lib : UsbCdc.obj (.text:usbSetLineCoding0)
+                  0000a11a    00000008                            : UsbHidReq.obj (.text:usbSetReport)
+                  0000a122    00000006                            : UsbMscScsi.obj (.text:Msc_ResetFlags)
+                  0000a128    00000006                            : UsbMscScsi.obj (.text:USBMSC_fetchInfoStruct)
+                  0000a12e    00000006                            : usb.obj (.text:usbClearOEP0ByteCount)
+                  0000a134    00000006                            : usb.obj (.text:usbStallOEP0)
+                  0000a13a    00000004     usb_eventHandling.obj (.text:USBCDC_handleDataReceived)
+                  0000a13e    00000004     usb_eventHandling.obj (.text:USBCDC_handleReceiveCompleted)
+                  0000a142    00000004     usb_eventHandling.obj (.text:USBCDC_handleSendCompleted)
+                  0000a146    00000004     usb_eventHandling.obj (.text:USBHID_handleDataReceived)
+                  0000a14a    00000004     usb_eventHandling.obj (.text:USBHID_handleReceiveCompleted)
+                  0000a14e    00000004     usb_eventHandling.obj (.text:USBHID_handleSendCompleted)
+                  0000a152    00000004     usb_eventHandling.obj (.text:USBMSC_handleBufferEvent)
+                  0000a156    00000004     usb_eventHandling.obj (.text:USB_handleClockEvent)
+                  0000a15a    00000004     usb_eventHandling.obj (.text:USB_handleEnumCompleteEvent)
+                  0000a15e    00000004     usb_eventHandling.obj (.text:USB_handleResetEvent)
+                  0000a162    00000004     usb_eventHandling.obj (.text:USB_handleResumeEvent)
+                  0000a166    00000004     usb_eventHandling.obj (.text:USB_handleSuspendEvent)
+                  0000a16a    00000004     usb_eventHandling.obj (.text:USB_handleVbusOffEvent)
+                  0000a16e    00000004     rts430xl.lib : exit.obj (.text:abort)
+                  0000a172    00000004     MSP-EXP430F5529_UE.lib : mmc.obj (.text:rcvr_mmc)
+                  0000a176    00000004                            : UsbCdc.obj (.text:usbSetControlLineState)
+                  0000a17a    00000004                            : mmc.obj (.text:xmit_mmc)
+                  0000a17e    00000002                            : UsbHidReportHandler.obj (.text:Handler_InReport)
+                  0000a180    00000002     rts430xl.lib : _lock.obj (.text:_nop)
 
-.const     0    00009ed8    00000cbd     
-                  00009ed8    000002cc     lab7.obj (.const:image)
-                  0000a1a4    0000024c     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.const:FONT6x8)
-                  0000a3f0    00000212     LAB7main.obj (.const:tiBug)
-                  0000a602    0000015e     descriptors.obj (.const:tUsbRequestList)
-                  0000a760    000000f4     descriptors.obj (.const:abromStringDescriptor)
-                  0000a854    00000084     lab7.obj (.const:.string)
-                  0000a8d8    00000082     descriptors.obj (.const)
-                  0000a95a    00000082     mouse.obj (.const:mouseImage)
-                  0000a9dc    00000048     LAB7main.obj (.const:.string)
-                  0000aa24    00000048     mouse.obj (.const:.string)
-                  0000aa6c    00000034     descriptors.obj (.const:abromReportDescriptor)
-                  0000aaa0    00000030     descriptors.obj (.const:stUsbHandle)
-                  0000aad0    00000024     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.const:bScsi_Standard_Inquiry_Data)
-                  0000aaf4    00000018     lab7.obj (.const:Game_explosion)
-                  0000ab0c    00000012     MSP-EXP430F5529_UE.lib : MassStorage.obj (.const:.string)
-                  0000ab1e    00000012     descriptors.obj (.const:abromDeviceDescriptor)
-                  0000ab30    00000010     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.const)
-                  0000ab40    00000010     mouse.obj (.const:usbMouseText)
-                  0000ab50    0000000c     lab7.obj (.const:gameMenuText)
-                  0000ab5c    0000000a     lab7.obj (.const:Game_ship)
-                  0000ab66    00000009     lab7.obj (.const:Game_explosion4)
-                  0000ab6f    00000001     --HOLE-- [fill = 0]
-                  0000ab70    00000008     lab7.obj (.const:Game_mine2)
-                  0000ab78    00000007     lab7.obj (.const:Game_explosion3)
-                  0000ab7f    00000001     --HOLE-- [fill = 0]
-                  0000ab80    00000006     lab7.obj (.const:Game_mine1)
-                  0000ab86    00000005     lab7.obj (.const:Game_explosion2)
-                  0000ab8b    00000001     --HOLE-- [fill = 0]
-                  0000ab8c    00000003     lab7.obj (.const:Game_explosion1)
-                  0000ab8f    00000001     --HOLE-- [fill = 0]
-                  0000ab90    00000002     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.const)
-                  0000ab92    00000001                            : HAL_Dogs102x6.obj (.const:$P$T2$3)
-                  0000ab93    00000001     --HOLE-- [fill = 0]
-                  0000ab94    00000001                            : HAL_Dogs102x6.obj (.const:$P$T3$4)
+.const     0    0000a182    00000cc3     
+                  0000a182    000002cc     lab7.obj (.const:image)
+                  0000a44e    0000024c     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.const:FONT6x8)
+                  0000a69a    00000212     LAB7main.obj (.const:tiBug)
+                  0000a8ac    0000015e     descriptors.obj (.const:tUsbRequestList)
+                  0000aa0a    000000f4     descriptors.obj (.const:abromStringDescriptor)
+                  0000aafe    00000084     lab7.obj (.const:.string)
+                  0000ab82    00000082     descriptors.obj (.const)
+                  0000ac04    00000082     mouse.obj (.const:mouseImage)
+                  0000ac86    00000048     LAB7main.obj (.const:.string)
+                  0000acce    00000048     mouse.obj (.const:.string)
+                  0000ad16    00000034     descriptors.obj (.const:abromReportDescriptor)
+                  0000ad4a    00000030     descriptors.obj (.const:stUsbHandle)
+                  0000ad7a    00000024     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.const:bScsi_Standard_Inquiry_Data)
+                  0000ad9e    00000018     lab7.obj (.const:Game_explosion)
+                  0000adb6    00000012     MSP-EXP430F5529_UE.lib : MassStorage.obj (.const:.string)
+                  0000adc8    00000012     descriptors.obj (.const:abromDeviceDescriptor)
+                  0000adda    00000010     MSP-EXP430F5529_UE.lib : UsbMscScsi.obj (.const)
+                  0000adea    00000010     mouse.obj (.const:usbMouseText)
+                  0000adfa    0000000c     lab7.obj (.const:gameMenuText)
+                  0000ae06    0000000a     lab7.obj (.const:Game_ship)
+                  0000ae10    00000009     lab7.obj (.const:Game_explosion4)
+                  0000ae19    00000001     --HOLE-- [fill = 0]
+                  0000ae1a    00000008     lab7.obj (.const:Game_mine2)
+                  0000ae22    00000007     lab7.obj (.const:Game_explosion3)
+                  0000ae29    00000001     --HOLE-- [fill = 0]
+                  0000ae2a    00000006     lab7.obj (.const:Game_mine1)
+                  0000ae30    00000005     lab7.obj (.const:Game_explosion2)
+                  0000ae35    00000001     --HOLE-- [fill = 0]
+                  0000ae36    00000004     lab7.obj (.const:piece)
+                  0000ae3a    00000003     lab7.obj (.const:Game_explosion1)
+                  0000ae3d    00000001     --HOLE-- [fill = 0]
+                  0000ae3e    00000002     MSP-EXP430F5529_UE.lib : MassStorageCommon.obj (.const)
+                  0000ae40    00000002     lab7.obj (.const:dust)
+                  0000ae42    00000001     MSP-EXP430F5529_UE.lib : HAL_Dogs102x6.obj (.const:$P$T2$3)
+                  0000ae43    00000001     --HOLE-- [fill = 0]
+                  0000ae44    00000001                            : HAL_Dogs102x6.obj (.const:$P$T3$4)
 
 .int42     0    0000ffd4    00000002     
                   0000ffd4    00000002     MSP-EXP430F5529_UE.lib : HAL_Buttons.obj (.int42)
@@ -524,14 +528,14 @@ ffffffff   .text
 00000733   ADC12MEM9_H
 00000732   ADC12MEM9_L
 0000468a   ADC12_ISR
-0000ab90   BYTES_PER_BLOCK
-00007328   Board_init
-00008c1e   Board_ledOff
-00008c6c   Board_ledToggle
-00009db8   Buttons_init
-00009ce6   Buttons_interruptEnable
-00009d88   Buttons_startWDT
-00009ec4   C$$EXIT
+0000ae3e   BYTES_PER_BLOCK
+000075b4   Board_init
+00008eaa   Board_ledOff
+00008ef8   Board_ledToggle
+0000a05a   Buttons_init
+00009f88   Buttons_interruptEnable
+0000a02a   Buttons_startWDT
+0000a16e   C$$EXIT
 000008c0   CBCTL0
 000008c1   CBCTL0_H
 000008c0   CBCTL0_L
@@ -560,25 +564,25 @@ ffffffff   .text
 00000156   CRCRESR
 00000157   CRCRESR_H
 00000156   CRCRESR_L
-0000949e   CdcIsReceiveInProgress
-00009882   CdcResetData
-00006ef2   CdcToBufferFromHost
-00006308   CdcToHostFromBuffer
-0000776a   Check_CBW
-00009a3e   Cma3000_disable
-00007d3e   Cma3000_init
-0000906a   Cma3000_readAccel
-00009bb2   Cma3000_readAccel_offset
-00008da2   Cma3000_readRegister
-00009dc6   Cma3000_setAccel_offset
-00008dec   Cma3000_writeRegister
-000036e7   Cma3000_xAccel
-000036ea   Cma3000_xAccel_offset
-000036e8   Cma3000_yAccel
-000036eb   Cma3000_yAccel_offset
-000036e9   Cma3000_zAccel
-000036ec   Cma3000_zAccel_offset
-0000812a   CopyUsbToBuff
+0000972a   CdcIsReceiveInProgress
+00009b0e   CdcResetData
+0000717e   CdcToBufferFromHost
+00006594   CdcToHostFromBuffer
+000079f6   Check_CBW
+00009cca   Cma3000_disable
+00007fca   Cma3000_init
+000092f6   Cma3000_readAccel
+00009e3e   Cma3000_readAccel_offset
+0000902e   Cma3000_readRegister
+0000a068   Cma3000_setAccel_offset
+00009078   Cma3000_writeRegister
+000036f3   Cma3000_xAccel
+000036f6   Cma3000_xAccel_offset
+000036f4   Cma3000_yAccel
+000036f7   Cma3000_yAccel_offset
+000036f5   Cma3000_zAccel
+000036f8   Cma3000_zAccel_offset
+000083b6   CopyUsbToBuff
 00000510   DMA0CTL
 00000511   DMA0CTL_H
 00000510   DMA0CTL_L
@@ -621,26 +625,26 @@ ffffffff   .text
 0000050e   DMAIV
 0000050f   DMAIV_H
 0000050e   DMAIV_L
-00002eb8   DataCnt
-0000962e   Dogs102x6_backlightInit
-00007f92   Dogs102x6_charDraw
-00008e80   Dogs102x6_clearImage
-00009c12   Dogs102x6_clearInverseDisplay
-00008aca   Dogs102x6_clearRow
-00009390   Dogs102x6_clearScreen
-000090aa   Dogs102x6_imageDraw
-000083a6   Dogs102x6_init
-00003402   Dogs102x6_initMacro
-00008a1a   Dogs102x6_setAddress
-000091aa   Dogs102x6_setBacklight
-000094d0   Dogs102x6_setContrast
-00009c28   Dogs102x6_setInverseDisplay
-000082b2   Dogs102x6_stringDraw
-000092e0   Dogs102x6_writeCommand
-00008572   Dogs102x6_writeData
-00006192   DrawExplosions
-00008232   DrawImage
-00006db8   DrawShip
+00002ec4   DataCnt
+000098ba   Dogs102x6_backlightInit
+0000821e   Dogs102x6_charDraw
+0000910c   Dogs102x6_clearImage
+00009e9e   Dogs102x6_clearInverseDisplay
+00008d56   Dogs102x6_clearRow
+0000961c   Dogs102x6_clearScreen
+00009336   Dogs102x6_imageDraw
+00008632   Dogs102x6_init
+0000340e   Dogs102x6_initMacro
+00008ca6   Dogs102x6_setAddress
+00009436   Dogs102x6_setBacklight
+0000975c   Dogs102x6_setContrast
+00009eb4   Dogs102x6_setInverseDisplay
+0000853e   Dogs102x6_stringDraw
+0000956c   Dogs102x6_writeCommand
+000087fe   Dogs102x6_writeData
+0000641e   DrawExplosions
+000084be   DrawImage
+00007044   DrawShip
 00000140   FCTL1
 00000141   FCTL1_H
 00000140   FCTL1_L
@@ -650,67 +654,67 @@ ffffffff   .text
 00000146   FCTL4
 00000147   FCTL4_H
 00000146   FCTL4_L
-0000aaf4   Game_explosion
-0000ab8c   Game_explosion1
-0000ab86   Game_explosion2
-0000ab78   Game_explosion3
-0000ab66   Game_explosion4
-0000ab80   Game_mine1
-0000ab70   Game_mine2
-0000ab5c   Game_ship
-00009bca   Get_MaxLUN
-000087ec   Get_TLV_Info
-00009e48   Handler_InFeature
-00009ed4   Handler_InReport
-000096be   Handler_SetLineCoding0
-000096ec   Handler_SetLineCoding1
-0000971a   Handler_SetLineCoding2
-000081ae   HidCopyUsbToBuff
-00009502   HidIsReceiveInProgress
-000098ac   HidResetData
-00006744   HidToBufferFromHost
-00006476   HidToHostFromBuffer
-00009b48   IEP0InterruptHandler
-00003714   INS
-00009e20   I_ASR
-00009e2a   I_LSL
-00009e34   I_LSR
-0000740c   Init_FLL
-00009534   Init_FLL_Settle
-00009358   LFXT_Start
-00009d98   L_LSL
-0000929c   L_LSL_1
-00009278   L_LSL_10
-00009274   L_LSL_11
-00009270   L_LSL_12
-0000926c   L_LSL_13
-00009268   L_LSL_14
-00009264   L_LSL_15
-00009298   L_LSL_2
-00009294   L_LSL_3
-00009290   L_LSL_4
-0000928c   L_LSL_5
-00009288   L_LSL_6
-00009284   L_LSL_7
-00009280   L_LSL_8
-0000927c   L_LSL_9
-000092da   L_LSR_1
-000092b6   L_LSR_10
-000092b2   L_LSR_11
-000092ae   L_LSR_12
-000092aa   L_LSR_13
-000092a6   L_LSR_14
-000092a2   L_LSR_15
-000092d6   L_LSR_2
-000092d2   L_LSR_3
-000092ce   L_LSR_4
-000092ca   L_LSR_5
-000092c6   L_LSR_6
-000092c2   L_LSR_7
-000092be   L_LSR_8
-000092ba   L_LSR_9
-00009d1c   L_ROTL
-00004cd8   LaunchpadDef
+0000ad9e   Game_explosion
+0000ae3a   Game_explosion1
+0000ae30   Game_explosion2
+0000ae22   Game_explosion3
+0000ae10   Game_explosion4
+0000ae2a   Game_mine1
+0000ae1a   Game_mine2
+0000ae06   Game_ship
+00009e56   Get_MaxLUN
+00008a78   Get_TLV_Info
+0000a0ea   Handler_InFeature
+0000a17e   Handler_InReport
+0000994a   Handler_SetLineCoding0
+00009978   Handler_SetLineCoding1
+000099a6   Handler_SetLineCoding2
+0000843a   HidCopyUsbToBuff
+0000978e   HidIsReceiveInProgress
+00009b38   HidResetData
+000069d0   HidToBufferFromHost
+00006702   HidToHostFromBuffer
+00009dd4   IEP0InterruptHandler
+00003720   INS
+0000a0c2   I_ASR
+0000a0cc   I_LSL
+0000a0d6   I_LSR
+00007698   Init_FLL
+000097c0   Init_FLL_Settle
+000095e4   LFXT_Start
+0000a03a   L_LSL
+00009528   L_LSL_1
+00009504   L_LSL_10
+00009500   L_LSL_11
+000094fc   L_LSL_12
+000094f8   L_LSL_13
+000094f4   L_LSL_14
+000094f0   L_LSL_15
+00009524   L_LSL_2
+00009520   L_LSL_3
+0000951c   L_LSL_4
+00009518   L_LSL_5
+00009514   L_LSL_6
+00009510   L_LSL_7
+0000950c   L_LSL_8
+00009508   L_LSL_9
+00009566   L_LSR_1
+00009542   L_LSR_10
+0000953e   L_LSR_11
+0000953a   L_LSR_12
+00009536   L_LSR_13
+00009532   L_LSR_14
+0000952e   L_LSR_15
+00009562   L_LSR_2
+0000955e   L_LSR_3
+0000955a   L_LSR_4
+00009556   L_LSR_5
+00009552   L_LSR_6
+0000954e   L_LSR_7
+0000954a   L_LSR_8
+00009546   L_LSR_9
+00009fbe   L_ROTL
+00005212   LaunchpadDef
 000004c4   MAC
 000004da   MAC32H
 000004db   MAC32H_H
@@ -750,23 +754,23 @@ ffffffff   .text
 000004c2   MPYS_L
 000004c1   MPY_H
 000004c0   MPY_L
-00005e5a   MSCFromHostToBuffer
-000065e2   MSCToHostFromBuffer
-00003432   McsCbw
-00003452   McsCsw
-00007bfc   Menu_active
-00006b3a   Mouse
-000034bc   MscControl
-000085e0   MscCopyUsbToBuff
-000034a0   MscReadControl
-00009dfe   MscResetCtrlLun
-00009748   MscResetData
-0000884e   MscSendData
-00003480   MscWriteControl
-00009e78   Msc_ResetFlags
-00009dd4   Msc_ResetStateMachine
-00008724   Msc_ResetStruct
-00008cba   OEP0InterruptHandler
+00006280   MSCFromHostToBuffer
+0000686e   MSCToHostFromBuffer
+0000343e   McsCbw
+0000345e   McsCsw
+00007e88   Menu_active
+00006dc6   Mouse
+000034c8   MscControl
+0000886c   MscCopyUsbToBuff
+000034ac   MscReadControl
+0000a0a0   MscResetCtrlLun
+000099d4   MscResetData
+00008ada   MscSendData
+0000348c   MscWriteControl
+0000a122   Msc_ResetFlags
+0000a076   Msc_ResetStateMachine
+000089b0   Msc_ResetStruct
+00008f46   OEP0InterruptHandler
 000004c8   OP2
 000004e2   OP2H
 000004e3   OP2H_H
@@ -907,8 +911,8 @@ ffffffff   .text
 0000012e   PMMRIE
 0000012f   PMMRIE_H
 0000012e   PMMRIE_L
-00008ec8   PWRVBUSoffHandler
-000093c6   PWRVBUSonHandler
+00009154   PWRVBUSoffHandler
+00009652   PWRVBUSonHandler
 000045b6   Port1_ISR
 000045f2   Port2_ISR
 00000158   RCCTL0
@@ -969,23 +973,23 @@ ffffffff   .text
 000004b6   RTCYEAR
 000004b7   RTCYEAR_H
 000004b6   RTCYEAR_L
-00002ab8   RW_dataBuf
-00002ec0   RWbuf
-00002ebc   RWbuf_info
-00009a62   RandomAddEntropy
-00004826   RandomNumber
-0000ab30   Report_Luns
-00003460   RequestSenseResponse
-00008788   Reset_RequestSenseResponse
-000036e6   RevID
-00009cf8   SDCard_fastMode
-00008e36   SDCard_init
-00009566   SDCard_readFrame
-00009900   SDCard_sendFrame
-00009e50   SDCard_setCSHigh
-00009e58   SDCard_setCSLow
-00009928   SET_RequestsenseMediaNotPresent
-00009950   SET_RequestsenseNotReady
+00002ac4   RW_dataBuf
+00002ecc   RWbuf
+00002ec8   RWbuf_info
+00009cee   RandomAddEntropy
+00004d60   RandomNumber
+0000adda   Report_Luns
+0000346c   RequestSenseResponse
+00008a14   Reset_RequestSenseResponse
+000036f2   RevID
+00009f9a   SDCard_fastMode
+000090c2   SDCard_init
+000097f2   SDCard_readFrame
+00009b8c   SDCard_sendFrame
+0000a0f2   SDCard_setCSHigh
+0000a0fa   SDCard_setCSLow
+00009bb4   SET_RequestsenseMediaNotPresent
+00009bdc   SET_RequestsenseNotReady
 00000100   SFRIE1
 00000101   SFRIE1_H
 00000100   SFRIE1_L
@@ -1040,27 +1044,27 @@ ffffffff   .text
 0000019a   SYSUNIV
 0000019b   SYSUNIV_H
 0000019a   SYSUNIV_L
-00005ad2   Scsi_Cmd_Parser
-00007020   Scsi_Inquiry
-000093fc   Scsi_Mode_Sense10
-00009432   Scsi_Mode_Sense6
-000035d4   Scsi_Mode_Sense_10
-000035d0   Scsi_Mode_Sense_6
-00007a8c   Scsi_Read10
-000097d2   Scsi_Read_Capacity10
-000035c8   Scsi_Read_Capacity_10
-000035dc   Scsi_Read_Format_Capacity
-00009978   Scsi_Report_Luns
-000075ca   Scsi_Request_Sense
-0000342e   Scsi_Residue
-0000931c   Scsi_Send_CSW
-000034c6   Scsi_Standard_Inquiry_Data
-00009c3e   Scsi_Test_Unit_Ready
-0000832c   Scsi_Unknown_Request
-000088ae   Scsi_Verify_CBW
-000079cc   Scsi_Write10
-000091e8   SetVCore
-00008f10   SetupPacketInterruptHandler
+00005ef8   Scsi_Cmd_Parser
+000072ac   Scsi_Inquiry
+00009688   Scsi_Mode_Sense10
+000096be   Scsi_Mode_Sense6
+000035e0   Scsi_Mode_Sense_10
+000035dc   Scsi_Mode_Sense_6
+00007d18   Scsi_Read10
+00009a5e   Scsi_Read_Capacity10
+000035d4   Scsi_Read_Capacity_10
+000035e8   Scsi_Read_Format_Capacity
+00009c04   Scsi_Report_Luns
+00007856   Scsi_Request_Sense
+0000343a   Scsi_Residue
+000095a8   Scsi_Send_CSW
+000034d2   Scsi_Standard_Inquiry_Data
+00009eca   Scsi_Test_Unit_Ready
+000085b8   Scsi_Unknown_Request
+00008b3a   Scsi_Verify_CBW
+00007c58   Scsi_Write10
+00009474   SetVCore
+0000919c   SetupPacketInterruptHandler
 00000352   TA0CCR0
 00000354   TA0CCR1
 00000356   TA0CCR2
@@ -1216,9 +1220,9 @@ ffffffff   .text
 00000171   UCSCTL8_H
 00000170   UCSCTL8_L
 00004578   UNMI_ISR
-00009e90   USBCDC_handleDataReceived
-00009e94   USBCDC_handleReceiveCompleted
-00009e98   USBCDC_handleSendCompleted
+0000a13a   USBCDC_handleDataReceived
+0000a13e   USBCDC_handleReceiveCompleted
+0000a142   USBCDC_handleSendCompleted
 00000902   USBCNF
 00000903   USBCNF_H
 00000902   USBCNF_L
@@ -1227,10 +1231,10 @@ ffffffff   .text
 0000093b   USBFN_H
 0000093a   USBFN_L
 0000093f   USBFUNADR
-00009e9c   USBHID_handleDataReceived
-00009ea0   USBHID_handleReceiveCompleted
-00009ea4   USBHID_handleSendCompleted
-0000769a   USBHID_sendReport
+0000a146   USBHID_handleDataReceived
+0000a14a   USBHID_handleReceiveCompleted
+0000a14e   USBHID_handleSendCompleted
+00007926   USBHID_sendReport
 0000093d   USBIE
 00002378   USBIEP0BUF
 000023c9   USBIEPBBAX_1
@@ -1286,15 +1290,15 @@ ffffffff   .text
 00000936   USBMAINT
 00000937   USBMAINT_H
 00000936   USBMAINT_L
-0000580a   USBMSC_bufferProcessed
-000036c6   USBMSC_config
-00009e7e   USBMSC_fetchInfoStruct
-00009226   USBMSC_getState
-00009ea8   USBMSC_handleBufferEvent
-00007144   USBMSC_poll
-00009776   USBMSC_registerBufInfo
-00009028   USBMSC_reset
-00005cb8   USBMSC_updateMediaInfo
+00005980   USBMSC_bufferProcessed
+000036d2   USBMSC_config
+0000a128   USBMSC_fetchInfoStruct
+000094b2   USBMSC_getState
+0000a152   USBMSC_handleBufferEvent
+000073d0   USBMSC_poll
+00009a02   USBMSC_registerBufInfo
+000092b4   USBMSC_reset
+000060de   USBMSC_updateMediaInfo
 00002370   USBOEP0BUF
 00002389   USBOEPBBAX_1
 00002391   USBOEPBBAX_2
@@ -1366,38 +1370,38 @@ ffffffff   .text
 00000932   USBVECINT
 00000933   USBVECINT_H
 00000932   USBVECINT_L
-000074f0   USB_InitSerialStringDescriptor
-000036f2   USB_RX_memcpy
-000036ee   USB_TX_memcpy
-000099a0   USB_connect
-00009598   USB_connectionInfo
-00007e70   USB_connectionState
-00009a86   USB_disable
-0000801c   USB_enable
-00009eac   USB_handleClockEvent
-00009eb0   USB_handleEnumCompleteEvent
-00009eb4   USB_handleResetEvent
-00009eb8   USB_handleResumeEvent
-00009ebc   USB_handleSuspendEvent
-00009ec0   USB_handleVbusOffEvent
-00009c96   USB_handleVbusOnEvent
-00008b20   USB_init
-000099c8   USB_initMemcpy
-0000689e   USB_reset
-00009be2   USB_resume
-00009e60   USB_setEnabledEvents
-000095ca   USB_suspend
-000054f4   UpdateBackground
-00005ff8   UpdateMines
-000050ee   UpdateMissile
+0000777c   USB_InitSerialStringDescriptor
+000036fe   USB_RX_memcpy
+000036fa   USB_TX_memcpy
+00009c2c   USB_connect
+00009824   USB_connectionInfo
+000080fc   USB_connectionState
+00009d12   USB_disable
+000082a8   USB_enable
+0000a156   USB_handleClockEvent
+0000a15a   USB_handleEnumCompleteEvent
+0000a15e   USB_handleResetEvent
+0000a162   USB_handleResumeEvent
+0000a166   USB_handleSuspendEvent
+0000a16a   USB_handleVbusOffEvent
+00009f38   USB_handleVbusOnEvent
+00008dac   USB_init
+00009c54   USB_initMemcpy
+00006b2a   USB_reset
+00009e6e   USB_resume
+0000a102   USB_setEnabledEvents
+00009856   USB_suspend
+0000566a   UpdateBackground
+00005c48   UpdateMines1
+0000482e   UpdateMissile
 0000015c   WDTCTL
 0000015d   WDTCTL_H
 0000015c   WDTCTL_L
 00004658   WDT_ISR
-00009468   Wheel_getPosition
-00008b76   Wheel_getValue
-00009a18   Wheel_init
-0000965e   XT2_Start
+000096f4   Wheel_getPosition
+00008e02   Wheel_getValue
+00009ca4   Wheel_init
+000098ea   XT2_Start
 00004400   __STACK_END
 000000a0   __STACK_SIZE
 00000001   __TI_args_main
@@ -1407,86 +1411,89 @@ ffffffff   __binit__
 00002400   __bss__
 ffffffff   __c_args__
 000046a0   __cinit__
-0000982a   __divi
-00009c54   __divu
-00008a72   __divul
-0000371e   __end__
+00009ab6   __divi
+00009ef6   __divu
+00008cfe   __divul
+0000372a   __end__
 ffffffff   __etext__
-00009c6a   __mpyi_f5hw
-00009aa8   __mpyl_f5hw
+00009f0c   __mpyi_f5hw
+00009d34   __mpyl_f5hw
 ffffffff   __pinit__
-0000982a   __remi
-00009c54   __remu
-00008a72   __remul
+00009ab6   __remi
+00009ef6   __remu
+00008cfe   __remul
 ffffffff   __text__
-0000890a   _auto_init
+00008b96   _auto_init
 0000462e   _c_int00
 0000462e   _c_int00_noexit
-000036fe   _cleanup_ptr
-00003702   _dtors_ptr
-000036f6   _lock
-00009ed6   _nop
+0000370a   _cleanup_ptr
+0000370e   _dtors_ptr
+00003702   _lock
+0000a180   _nop
 0000fffe   _reset_vector
 00004360   _stack
-00009e16   _system_pre_init
-000036fa   _unlock
+0000a0b8   _system_pre_init
+00003706   _unlock
 00002378   abIEP0Buffer
 00002370   abOEP0Buffer
-00003600   abUsbRequestIncomingData
-000035f8   abUsbRequestReturnData
-00009ec4   abort
-00003608   abramSerialStringDescriptor
-0000a8d8   abromConfigurationDescriptorGroup
-0000ab1e   abromDeviceDescriptor
-0000aa6c   abromReportDescriptor
-0000a760   abromStringDescriptor
-000036e5   accelData
-000036ed   bDetectCard
-0000362c   bEnumerationStatus
-0000362b   bFunctionSuspended
-00003414   bMcsCommandSupported
-000034c5   bMscCbwFailed
-00003416   bMscCbwReceived
-000035c6   bMscResetRequired
-0000aad0   bScsi_Standard_Inquiry_Data
-0000362a   bStatusAction
-000034c4   bUnitAttention
-00002732   background
-00003400   backlight
+0000360c   abUsbRequestIncomingData
+00003604   abUsbRequestReturnData
+0000a16e   abort
+00003614   abramSerialStringDescriptor
+0000ab82   abromConfigurationDescriptorGroup
+0000adc8   abromDeviceDescriptor
+0000ad16   abromReportDescriptor
+0000aa0a   abromStringDescriptor
+000036f1   accelData
+000036f9   bDetectCard
+00003638   bEnumerationStatus
+00003637   bFunctionSuspended
+00003420   bMcsCommandSupported
+000034d1   bMscCbwFailed
+00003422   bMscCbwReceived
+000035d2   bMscResetRequired
+0000ad7a   bScsi_Standard_Inquiry_Data
+00003636   bStatusAction
+000034d0   bUnitAttention
+00002734   background
+0000340c   backlight
 ffffffff   binit
-0000370c   buttonDebounce
-0000370e   buttonsPressed
-00008966   checkInsertionRemoval
+00003718   buttonDebounce
+0000371a   buttonsPressed
+00008bf2   checkInsertionRemoval
 000046a0   cinit
-00003401   contrast
-000033ff   currentColumn
-000033fe   currentPage
-0000968e   detectCard
-00006c7c   disk_initialize
-0000723e   disk_ioctl
-00007c9e   disk_read
-00009aca   disk_status
-00007906   disk_write
-000030cc   dogs102x6Memory
-0000371e   end
+0000340d   contrast
+0000340b   currentColumn
+0000340a   currentPage
+0000991a   detectCard
+00006f08   disk_initialize
+000074ca   disk_ioctl
+00007f2a   disk_read
+00009d56   disk_status
+00007b92   disk_write
+000030d8   dogs102x6Memory
+0000ae40   dust
+00002a7a   dusts
+0000372a   end
 ffffffff   etext
-00002a7e   explosions
-00002400   frame
+00002a8a   explosions
+00002402   frame
 00004400   iUsbInterruptHandler
-0000371a   isMSCConfigured
-000090ea   lab7
-00002eba   logCnt
-000069f6   main
-000030c0   mediaInfo
-000098d6   memcpy
-000097fe   memcpyDMA0
-00009aea   memset
-00002a64   mines
-00002a78   missile
-00003706   mouseReport
-000089c0   msc_Init
-00008d56   msc_Loop
-00002a62   offset
+00003726   isMSCConfigured
+00009376   lab7
+00009ee0   lcg
+00002ec6   logCnt
+00006c82   main
+000030cc   mediaInfo
+00009b62   memcpy
+00009a8a   memcpyDMA0
+00009d76   memset
+00002a66   mines
+00002a84   missile
+00003712   mouseReport
+00008c4c   msc_Init
+00008fe2   msc_Loop
+00002a64   offset
 00001c00   pbXBufferAddressEp1
 00001d00   pbXBufferAddressEp2
 00001e00   pbXBufferAddressEp3
@@ -1496,65 +1503,68 @@ ffffffff   etext
 00001d40   pbYBufferAddressEp2
 00001cc0   pbYBufferAddressEp81
 00001dc0   pbYBufferAddressEp82
+0000ae36   piece
 ffffffff   pinit
-00003710   positionData
-00003712   positionDataOld
-00008492   read_LUN0
-000034c2   sCtrlLun
-00003420   sRwbuf
-00002a8e   score
-0000370a   sendNewMousePosition
-0000aaa0   stUsbHandle
+0000371c   positionData
+0000371e   positionDataOld
+0000871e   read_LUN0
+000034ce   sCtrlLun
+0000342c   sRwbuf
+00002a9a   score
+00002400   seed
+00003716   sendNewMousePosition
+0000a10a   simple_random_choice
+0000ad4a   stUsbHandle
 00000920   tEndPoint0DescriptorBlock
 000023c8   tInputEndPointDescriptorBlock
 00002388   tOutputEndPointDescriptorBlock
 00002380   tSetupPacket
-0000a602   tUsbRequestList
-00003718   timeoutCounter
-00009d2e   usbClearDeviceFeature
-000086bc   usbClearEndpointFeature
-00009e84   usbClearOEP0ByteCount
-00009caa   usbClearOEPByteCount
-00007dd8   usbDecodeAndProcessUsbRequest
-00009da8   usbGetConfiguration
-00009d40   usbGetConfigurationDescriptor
-00009d52   usbGetDeviceDescriptor
-000099f0   usbGetDeviceStatus
-00008502   usbGetEndpointStatus
-00009856   usbGetHidDescriptor
-00009b64   usbGetInterface
-00009b7e   usbGetInterfaceStatus
-0000912a   usbGetLineCoding0
-00009c80   usbGetReport
-00009de2   usbGetReportDescriptor
-00008fa0   usbGetStringDescriptor
-00009e0a   usbInvalidRequest
-0000ab40   usbMouseText
-00009d64   usbReceiveDataPacketOnEP0
-00008f58   usbReceiveNextPacketOnOEP0
-00009b0a   usbSendDataPacketOnEP0
-0000841e   usbSendNextPacketOnIEP0
-00009df0   usbSendZeroLengthPacketOnIEP0
-00009b98   usbSetAddress
-00009b2a   usbSetConfiguration
-00009ecc   usbSetControlLineState
-00009d76   usbSetDeviceFeature
-00008fe4   usbSetEndpointFeature
-0000916a   usbSetInterface
-00009e68   usbSetLineCoding0
-00009e70   usbSetReport
-000097a4   usbStallEndpoint
-00009e3e   usbStallEndpoint0
-00009cbe   usbStallInEndpoint
-00009e8a   usbStallOEP0
-00009cd2   usbStallOutEndpoint
-000080a4   validateCSD
-000035ea   wBytesRemainingOnIEP0
-000035ec   wBytesRemainingOnOEP0
-0000362e   wUsbEventMask
-0000864e   write_LUN0
-00003418   xBufferAddr
-0000341c   yBufferAddr
+0000a8ac   tUsbRequestList
+00003724   timeoutCounter
+00009fd0   usbClearDeviceFeature
+00008948   usbClearEndpointFeature
+0000a12e   usbClearOEP0ByteCount
+00009f4c   usbClearOEPByteCount
+00008064   usbDecodeAndProcessUsbRequest
+0000a04a   usbGetConfiguration
+00009fe2   usbGetConfigurationDescriptor
+00009ff4   usbGetDeviceDescriptor
+00009c7c   usbGetDeviceStatus
+0000878e   usbGetEndpointStatus
+00009ae2   usbGetHidDescriptor
+00009df0   usbGetInterface
+00009e0a   usbGetInterfaceStatus
+000093b6   usbGetLineCoding0
+00009f22   usbGetReport
+0000a084   usbGetReportDescriptor
+0000922c   usbGetStringDescriptor
+0000a0ac   usbInvalidRequest
+0000adea   usbMouseText
+0000a006   usbReceiveDataPacketOnEP0
+000091e4   usbReceiveNextPacketOnOEP0
+00009d96   usbSendDataPacketOnEP0
+000086aa   usbSendNextPacketOnIEP0
+0000a092   usbSendZeroLengthPacketOnIEP0
+00009e24   usbSetAddress
+00009db6   usbSetConfiguration
+0000a176   usbSetControlLineState
+0000a018   usbSetDeviceFeature
+00009270   usbSetEndpointFeature
+000093f6   usbSetInterface
+0000a112   usbSetLineCoding0
+0000a11a   usbSetReport
+00009a30   usbStallEndpoint
+0000a0e0   usbStallEndpoint0
+00009f60   usbStallInEndpoint
+0000a134   usbStallOEP0
+00009f74   usbStallOutEndpoint
+00008330   validateCSD
+000035f6   wBytesRemainingOnIEP0
+000035f8   wBytesRemainingOnOEP0
+0000363a   wUsbEventMask
+000088da   write_LUN0
+00003424   xBufferAddr
+00003428   yBufferAddr
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2324,82 +2334,84 @@ address    name
 000023ff   USBIEPSIZXY_7
 00002400   .bss
 00002400   __bss__
-00002400   frame
-00002732   background
-00002a62   offset
-00002a64   mines
-00002a78   missile
-00002a7e   explosions
-00002a8e   score
-00002ab8   RW_dataBuf
-00002eb8   DataCnt
-00002eba   logCnt
-00002ebc   RWbuf_info
-00002ec0   RWbuf
-000030c0   mediaInfo
-000030cc   dogs102x6Memory
-000033fe   currentPage
-000033ff   currentColumn
-00003400   backlight
-00003401   contrast
-00003402   Dogs102x6_initMacro
-00003414   bMcsCommandSupported
-00003416   bMscCbwReceived
-00003418   xBufferAddr
-0000341c   yBufferAddr
-00003420   sRwbuf
-0000342e   Scsi_Residue
-00003432   McsCbw
-00003452   McsCsw
-00003460   RequestSenseResponse
-00003480   MscWriteControl
-000034a0   MscReadControl
-000034bc   MscControl
-000034c2   sCtrlLun
-000034c4   bUnitAttention
-000034c5   bMscCbwFailed
-000034c6   Scsi_Standard_Inquiry_Data
-000035c6   bMscResetRequired
-000035c8   Scsi_Read_Capacity_10
-000035d0   Scsi_Mode_Sense_6
-000035d4   Scsi_Mode_Sense_10
-000035dc   Scsi_Read_Format_Capacity
-000035ea   wBytesRemainingOnIEP0
-000035ec   wBytesRemainingOnOEP0
-000035f8   abUsbRequestReturnData
-00003600   abUsbRequestIncomingData
-00003608   abramSerialStringDescriptor
-0000362a   bStatusAction
-0000362b   bFunctionSuspended
-0000362c   bEnumerationStatus
-0000362e   wUsbEventMask
-000036c6   USBMSC_config
-000036e5   accelData
-000036e6   RevID
-000036e7   Cma3000_xAccel
-000036e8   Cma3000_yAccel
-000036e9   Cma3000_zAccel
-000036ea   Cma3000_xAccel_offset
-000036eb   Cma3000_yAccel_offset
-000036ec   Cma3000_zAccel_offset
-000036ed   bDetectCard
-000036ee   USB_TX_memcpy
-000036f2   USB_RX_memcpy
-000036f6   _lock
-000036fa   _unlock
-000036fe   _cleanup_ptr
-00003702   _dtors_ptr
-00003706   mouseReport
-0000370a   sendNewMousePosition
-0000370c   buttonDebounce
-0000370e   buttonsPressed
-00003710   positionData
-00003712   positionDataOld
-00003714   INS
-00003718   timeoutCounter
-0000371a   isMSCConfigured
-0000371e   __end__
-0000371e   end
+00002400   seed
+00002402   frame
+00002734   background
+00002a64   offset
+00002a66   mines
+00002a7a   dusts
+00002a84   missile
+00002a8a   explosions
+00002a9a   score
+00002ac4   RW_dataBuf
+00002ec4   DataCnt
+00002ec6   logCnt
+00002ec8   RWbuf_info
+00002ecc   RWbuf
+000030cc   mediaInfo
+000030d8   dogs102x6Memory
+0000340a   currentPage
+0000340b   currentColumn
+0000340c   backlight
+0000340d   contrast
+0000340e   Dogs102x6_initMacro
+00003420   bMcsCommandSupported
+00003422   bMscCbwReceived
+00003424   xBufferAddr
+00003428   yBufferAddr
+0000342c   sRwbuf
+0000343a   Scsi_Residue
+0000343e   McsCbw
+0000345e   McsCsw
+0000346c   RequestSenseResponse
+0000348c   MscWriteControl
+000034ac   MscReadControl
+000034c8   MscControl
+000034ce   sCtrlLun
+000034d0   bUnitAttention
+000034d1   bMscCbwFailed
+000034d2   Scsi_Standard_Inquiry_Data
+000035d2   bMscResetRequired
+000035d4   Scsi_Read_Capacity_10
+000035dc   Scsi_Mode_Sense_6
+000035e0   Scsi_Mode_Sense_10
+000035e8   Scsi_Read_Format_Capacity
+000035f6   wBytesRemainingOnIEP0
+000035f8   wBytesRemainingOnOEP0
+00003604   abUsbRequestReturnData
+0000360c   abUsbRequestIncomingData
+00003614   abramSerialStringDescriptor
+00003636   bStatusAction
+00003637   bFunctionSuspended
+00003638   bEnumerationStatus
+0000363a   wUsbEventMask
+000036d2   USBMSC_config
+000036f1   accelData
+000036f2   RevID
+000036f3   Cma3000_xAccel
+000036f4   Cma3000_yAccel
+000036f5   Cma3000_zAccel
+000036f6   Cma3000_xAccel_offset
+000036f7   Cma3000_yAccel_offset
+000036f8   Cma3000_zAccel_offset
+000036f9   bDetectCard
+000036fa   USB_TX_memcpy
+000036fe   USB_RX_memcpy
+00003702   _lock
+00003706   _unlock
+0000370a   _cleanup_ptr
+0000370e   _dtors_ptr
+00003712   mouseReport
+00003716   sendNewMousePosition
+00003718   buttonDebounce
+0000371a   buttonsPressed
+0000371c   positionData
+0000371e   positionDataOld
+00003720   INS
+00003724   timeoutCounter
+00003726   isMSCConfigured
+0000372a   __end__
+0000372a   end
 00004360   _stack
 00004400   __STACK_END
 00004400   iUsbInterruptHandler
@@ -2413,260 +2425,264 @@ address    name
 0000468a   ADC12_ISR
 000046a0   __cinit__
 000046a0   cinit
-00004826   RandomNumber
-00004cd8   LaunchpadDef
-000050ee   UpdateMissile
-000054f4   UpdateBackground
-0000580a   USBMSC_bufferProcessed
-00005ad2   Scsi_Cmd_Parser
-00005cb8   USBMSC_updateMediaInfo
-00005e5a   MSCFromHostToBuffer
-00005ff8   UpdateMines
-00006192   DrawExplosions
-00006308   CdcToHostFromBuffer
-00006476   HidToHostFromBuffer
-000065e2   MSCToHostFromBuffer
-00006744   HidToBufferFromHost
-0000689e   USB_reset
-000069f6   main
-00006b3a   Mouse
-00006c7c   disk_initialize
-00006db8   DrawShip
-00006ef2   CdcToBufferFromHost
-00007020   Scsi_Inquiry
-00007144   USBMSC_poll
-0000723e   disk_ioctl
-00007328   Board_init
-0000740c   Init_FLL
-000074f0   USB_InitSerialStringDescriptor
-000075ca   Scsi_Request_Sense
-0000769a   USBHID_sendReport
-0000776a   Check_CBW
-00007906   disk_write
-000079cc   Scsi_Write10
-00007a8c   Scsi_Read10
-00007bfc   Menu_active
-00007c9e   disk_read
-00007d3e   Cma3000_init
-00007dd8   usbDecodeAndProcessUsbRequest
-00007e70   USB_connectionState
-00007f92   Dogs102x6_charDraw
-0000801c   USB_enable
-000080a4   validateCSD
-0000812a   CopyUsbToBuff
-000081ae   HidCopyUsbToBuff
-00008232   DrawImage
-000082b2   Dogs102x6_stringDraw
-0000832c   Scsi_Unknown_Request
-000083a6   Dogs102x6_init
-0000841e   usbSendNextPacketOnIEP0
-00008492   read_LUN0
-00008502   usbGetEndpointStatus
-00008572   Dogs102x6_writeData
-000085e0   MscCopyUsbToBuff
-0000864e   write_LUN0
-000086bc   usbClearEndpointFeature
-00008724   Msc_ResetStruct
-00008788   Reset_RequestSenseResponse
-000087ec   Get_TLV_Info
-0000884e   MscSendData
-000088ae   Scsi_Verify_CBW
-0000890a   _auto_init
-00008966   checkInsertionRemoval
-000089c0   msc_Init
-00008a1a   Dogs102x6_setAddress
-00008a72   __divul
-00008a72   __remul
-00008aca   Dogs102x6_clearRow
-00008b20   USB_init
-00008b76   Wheel_getValue
-00008c1e   Board_ledOff
-00008c6c   Board_ledToggle
-00008cba   OEP0InterruptHandler
-00008d56   msc_Loop
-00008da2   Cma3000_readRegister
-00008dec   Cma3000_writeRegister
-00008e36   SDCard_init
-00008e80   Dogs102x6_clearImage
-00008ec8   PWRVBUSoffHandler
-00008f10   SetupPacketInterruptHandler
-00008f58   usbReceiveNextPacketOnOEP0
-00008fa0   usbGetStringDescriptor
-00008fe4   usbSetEndpointFeature
-00009028   USBMSC_reset
-0000906a   Cma3000_readAccel
-000090aa   Dogs102x6_imageDraw
-000090ea   lab7
-0000912a   usbGetLineCoding0
-0000916a   usbSetInterface
-000091aa   Dogs102x6_setBacklight
-000091e8   SetVCore
-00009226   USBMSC_getState
-00009264   L_LSL_15
-00009268   L_LSL_14
-0000926c   L_LSL_13
-00009270   L_LSL_12
-00009274   L_LSL_11
-00009278   L_LSL_10
-0000927c   L_LSL_9
-00009280   L_LSL_8
-00009284   L_LSL_7
-00009288   L_LSL_6
-0000928c   L_LSL_5
-00009290   L_LSL_4
-00009294   L_LSL_3
-00009298   L_LSL_2
-0000929c   L_LSL_1
-000092a2   L_LSR_15
-000092a6   L_LSR_14
-000092aa   L_LSR_13
-000092ae   L_LSR_12
-000092b2   L_LSR_11
-000092b6   L_LSR_10
-000092ba   L_LSR_9
-000092be   L_LSR_8
-000092c2   L_LSR_7
-000092c6   L_LSR_6
-000092ca   L_LSR_5
-000092ce   L_LSR_4
-000092d2   L_LSR_3
-000092d6   L_LSR_2
-000092da   L_LSR_1
-000092e0   Dogs102x6_writeCommand
-0000931c   Scsi_Send_CSW
-00009358   LFXT_Start
-00009390   Dogs102x6_clearScreen
-000093c6   PWRVBUSonHandler
-000093fc   Scsi_Mode_Sense10
-00009432   Scsi_Mode_Sense6
-00009468   Wheel_getPosition
-0000949e   CdcIsReceiveInProgress
-000094d0   Dogs102x6_setContrast
-00009502   HidIsReceiveInProgress
-00009534   Init_FLL_Settle
-00009566   SDCard_readFrame
-00009598   USB_connectionInfo
-000095ca   USB_suspend
-0000962e   Dogs102x6_backlightInit
-0000965e   XT2_Start
-0000968e   detectCard
-000096be   Handler_SetLineCoding0
-000096ec   Handler_SetLineCoding1
-0000971a   Handler_SetLineCoding2
-00009748   MscResetData
-00009776   USBMSC_registerBufInfo
-000097a4   usbStallEndpoint
-000097d2   Scsi_Read_Capacity10
-000097fe   memcpyDMA0
-0000982a   __divi
-0000982a   __remi
-00009856   usbGetHidDescriptor
-00009882   CdcResetData
-000098ac   HidResetData
-000098d6   memcpy
-00009900   SDCard_sendFrame
-00009928   SET_RequestsenseMediaNotPresent
-00009950   SET_RequestsenseNotReady
-00009978   Scsi_Report_Luns
-000099a0   USB_connect
-000099c8   USB_initMemcpy
-000099f0   usbGetDeviceStatus
-00009a18   Wheel_init
-00009a3e   Cma3000_disable
-00009a62   RandomAddEntropy
-00009a86   USB_disable
-00009aa8   __mpyl_f5hw
-00009aca   disk_status
-00009aea   memset
-00009b0a   usbSendDataPacketOnEP0
-00009b2a   usbSetConfiguration
-00009b48   IEP0InterruptHandler
-00009b64   usbGetInterface
-00009b7e   usbGetInterfaceStatus
-00009b98   usbSetAddress
-00009bb2   Cma3000_readAccel_offset
-00009bca   Get_MaxLUN
-00009be2   USB_resume
-00009c12   Dogs102x6_clearInverseDisplay
-00009c28   Dogs102x6_setInverseDisplay
-00009c3e   Scsi_Test_Unit_Ready
-00009c54   __divu
-00009c54   __remu
-00009c6a   __mpyi_f5hw
-00009c80   usbGetReport
-00009c96   USB_handleVbusOnEvent
-00009caa   usbClearOEPByteCount
-00009cbe   usbStallInEndpoint
-00009cd2   usbStallOutEndpoint
-00009ce6   Buttons_interruptEnable
-00009cf8   SDCard_fastMode
-00009d1c   L_ROTL
-00009d2e   usbClearDeviceFeature
-00009d40   usbGetConfigurationDescriptor
-00009d52   usbGetDeviceDescriptor
-00009d64   usbReceiveDataPacketOnEP0
-00009d76   usbSetDeviceFeature
-00009d88   Buttons_startWDT
-00009d98   L_LSL
-00009da8   usbGetConfiguration
-00009db8   Buttons_init
-00009dc6   Cma3000_setAccel_offset
-00009dd4   Msc_ResetStateMachine
-00009de2   usbGetReportDescriptor
-00009df0   usbSendZeroLengthPacketOnIEP0
-00009dfe   MscResetCtrlLun
-00009e0a   usbInvalidRequest
-00009e16   _system_pre_init
-00009e20   I_ASR
-00009e2a   I_LSL
-00009e34   I_LSR
-00009e3e   usbStallEndpoint0
-00009e48   Handler_InFeature
-00009e50   SDCard_setCSHigh
-00009e58   SDCard_setCSLow
-00009e60   USB_setEnabledEvents
-00009e68   usbSetLineCoding0
-00009e70   usbSetReport
-00009e78   Msc_ResetFlags
-00009e7e   USBMSC_fetchInfoStruct
-00009e84   usbClearOEP0ByteCount
-00009e8a   usbStallOEP0
-00009e90   USBCDC_handleDataReceived
-00009e94   USBCDC_handleReceiveCompleted
-00009e98   USBCDC_handleSendCompleted
-00009e9c   USBHID_handleDataReceived
-00009ea0   USBHID_handleReceiveCompleted
-00009ea4   USBHID_handleSendCompleted
-00009ea8   USBMSC_handleBufferEvent
-00009eac   USB_handleClockEvent
-00009eb0   USB_handleEnumCompleteEvent
-00009eb4   USB_handleResetEvent
-00009eb8   USB_handleResumeEvent
-00009ebc   USB_handleSuspendEvent
-00009ec0   USB_handleVbusOffEvent
-00009ec4   C$$EXIT
-00009ec4   abort
-00009ecc   usbSetControlLineState
-00009ed4   Handler_InReport
-00009ed6   _nop
-0000a602   tUsbRequestList
-0000a760   abromStringDescriptor
-0000a8d8   abromConfigurationDescriptorGroup
-0000aa6c   abromReportDescriptor
-0000aaa0   stUsbHandle
-0000aad0   bScsi_Standard_Inquiry_Data
-0000aaf4   Game_explosion
-0000ab1e   abromDeviceDescriptor
-0000ab30   Report_Luns
-0000ab40   usbMouseText
-0000ab5c   Game_ship
-0000ab66   Game_explosion4
-0000ab70   Game_mine2
-0000ab78   Game_explosion3
-0000ab80   Game_mine1
-0000ab86   Game_explosion2
-0000ab8c   Game_explosion1
-0000ab90   BYTES_PER_BLOCK
+0000482e   UpdateMissile
+00004d60   RandomNumber
+00005212   LaunchpadDef
+0000566a   UpdateBackground
+00005980   USBMSC_bufferProcessed
+00005c48   UpdateMines1
+00005ef8   Scsi_Cmd_Parser
+000060de   USBMSC_updateMediaInfo
+00006280   MSCFromHostToBuffer
+0000641e   DrawExplosions
+00006594   CdcToHostFromBuffer
+00006702   HidToHostFromBuffer
+0000686e   MSCToHostFromBuffer
+000069d0   HidToBufferFromHost
+00006b2a   USB_reset
+00006c82   main
+00006dc6   Mouse
+00006f08   disk_initialize
+00007044   DrawShip
+0000717e   CdcToBufferFromHost
+000072ac   Scsi_Inquiry
+000073d0   USBMSC_poll
+000074ca   disk_ioctl
+000075b4   Board_init
+00007698   Init_FLL
+0000777c   USB_InitSerialStringDescriptor
+00007856   Scsi_Request_Sense
+00007926   USBHID_sendReport
+000079f6   Check_CBW
+00007b92   disk_write
+00007c58   Scsi_Write10
+00007d18   Scsi_Read10
+00007e88   Menu_active
+00007f2a   disk_read
+00007fca   Cma3000_init
+00008064   usbDecodeAndProcessUsbRequest
+000080fc   USB_connectionState
+0000821e   Dogs102x6_charDraw
+000082a8   USB_enable
+00008330   validateCSD
+000083b6   CopyUsbToBuff
+0000843a   HidCopyUsbToBuff
+000084be   DrawImage
+0000853e   Dogs102x6_stringDraw
+000085b8   Scsi_Unknown_Request
+00008632   Dogs102x6_init
+000086aa   usbSendNextPacketOnIEP0
+0000871e   read_LUN0
+0000878e   usbGetEndpointStatus
+000087fe   Dogs102x6_writeData
+0000886c   MscCopyUsbToBuff
+000088da   write_LUN0
+00008948   usbClearEndpointFeature
+000089b0   Msc_ResetStruct
+00008a14   Reset_RequestSenseResponse
+00008a78   Get_TLV_Info
+00008ada   MscSendData
+00008b3a   Scsi_Verify_CBW
+00008b96   _auto_init
+00008bf2   checkInsertionRemoval
+00008c4c   msc_Init
+00008ca6   Dogs102x6_setAddress
+00008cfe   __divul
+00008cfe   __remul
+00008d56   Dogs102x6_clearRow
+00008dac   USB_init
+00008e02   Wheel_getValue
+00008eaa   Board_ledOff
+00008ef8   Board_ledToggle
+00008f46   OEP0InterruptHandler
+00008fe2   msc_Loop
+0000902e   Cma3000_readRegister
+00009078   Cma3000_writeRegister
+000090c2   SDCard_init
+0000910c   Dogs102x6_clearImage
+00009154   PWRVBUSoffHandler
+0000919c   SetupPacketInterruptHandler
+000091e4   usbReceiveNextPacketOnOEP0
+0000922c   usbGetStringDescriptor
+00009270   usbSetEndpointFeature
+000092b4   USBMSC_reset
+000092f6   Cma3000_readAccel
+00009336   Dogs102x6_imageDraw
+00009376   lab7
+000093b6   usbGetLineCoding0
+000093f6   usbSetInterface
+00009436   Dogs102x6_setBacklight
+00009474   SetVCore
+000094b2   USBMSC_getState
+000094f0   L_LSL_15
+000094f4   L_LSL_14
+000094f8   L_LSL_13
+000094fc   L_LSL_12
+00009500   L_LSL_11
+00009504   L_LSL_10
+00009508   L_LSL_9
+0000950c   L_LSL_8
+00009510   L_LSL_7
+00009514   L_LSL_6
+00009518   L_LSL_5
+0000951c   L_LSL_4
+00009520   L_LSL_3
+00009524   L_LSL_2
+00009528   L_LSL_1
+0000952e   L_LSR_15
+00009532   L_LSR_14
+00009536   L_LSR_13
+0000953a   L_LSR_12
+0000953e   L_LSR_11
+00009542   L_LSR_10
+00009546   L_LSR_9
+0000954a   L_LSR_8
+0000954e   L_LSR_7
+00009552   L_LSR_6
+00009556   L_LSR_5
+0000955a   L_LSR_4
+0000955e   L_LSR_3
+00009562   L_LSR_2
+00009566   L_LSR_1
+0000956c   Dogs102x6_writeCommand
+000095a8   Scsi_Send_CSW
+000095e4   LFXT_Start
+0000961c   Dogs102x6_clearScreen
+00009652   PWRVBUSonHandler
+00009688   Scsi_Mode_Sense10
+000096be   Scsi_Mode_Sense6
+000096f4   Wheel_getPosition
+0000972a   CdcIsReceiveInProgress
+0000975c   Dogs102x6_setContrast
+0000978e   HidIsReceiveInProgress
+000097c0   Init_FLL_Settle
+000097f2   SDCard_readFrame
+00009824   USB_connectionInfo
+00009856   USB_suspend
+000098ba   Dogs102x6_backlightInit
+000098ea   XT2_Start
+0000991a   detectCard
+0000994a   Handler_SetLineCoding0
+00009978   Handler_SetLineCoding1
+000099a6   Handler_SetLineCoding2
+000099d4   MscResetData
+00009a02   USBMSC_registerBufInfo
+00009a30   usbStallEndpoint
+00009a5e   Scsi_Read_Capacity10
+00009a8a   memcpyDMA0
+00009ab6   __divi
+00009ab6   __remi
+00009ae2   usbGetHidDescriptor
+00009b0e   CdcResetData
+00009b38   HidResetData
+00009b62   memcpy
+00009b8c   SDCard_sendFrame
+00009bb4   SET_RequestsenseMediaNotPresent
+00009bdc   SET_RequestsenseNotReady
+00009c04   Scsi_Report_Luns
+00009c2c   USB_connect
+00009c54   USB_initMemcpy
+00009c7c   usbGetDeviceStatus
+00009ca4   Wheel_init
+00009cca   Cma3000_disable
+00009cee   RandomAddEntropy
+00009d12   USB_disable
+00009d34   __mpyl_f5hw
+00009d56   disk_status
+00009d76   memset
+00009d96   usbSendDataPacketOnEP0
+00009db6   usbSetConfiguration
+00009dd4   IEP0InterruptHandler
+00009df0   usbGetInterface
+00009e0a   usbGetInterfaceStatus
+00009e24   usbSetAddress
+00009e3e   Cma3000_readAccel_offset
+00009e56   Get_MaxLUN
+00009e6e   USB_resume
+00009e9e   Dogs102x6_clearInverseDisplay
+00009eb4   Dogs102x6_setInverseDisplay
+00009eca   Scsi_Test_Unit_Ready
+00009ee0   lcg
+00009ef6   __divu
+00009ef6   __remu
+00009f0c   __mpyi_f5hw
+00009f22   usbGetReport
+00009f38   USB_handleVbusOnEvent
+00009f4c   usbClearOEPByteCount
+00009f60   usbStallInEndpoint
+00009f74   usbStallOutEndpoint
+00009f88   Buttons_interruptEnable
+00009f9a   SDCard_fastMode
+00009fbe   L_ROTL
+00009fd0   usbClearDeviceFeature
+00009fe2   usbGetConfigurationDescriptor
+00009ff4   usbGetDeviceDescriptor
+0000a006   usbReceiveDataPacketOnEP0
+0000a018   usbSetDeviceFeature
+0000a02a   Buttons_startWDT
+0000a03a   L_LSL
+0000a04a   usbGetConfiguration
+0000a05a   Buttons_init
+0000a068   Cma3000_setAccel_offset
+0000a076   Msc_ResetStateMachine
+0000a084   usbGetReportDescriptor
+0000a092   usbSendZeroLengthPacketOnIEP0
+0000a0a0   MscResetCtrlLun
+0000a0ac   usbInvalidRequest
+0000a0b8   _system_pre_init
+0000a0c2   I_ASR
+0000a0cc   I_LSL
+0000a0d6   I_LSR
+0000a0e0   usbStallEndpoint0
+0000a0ea   Handler_InFeature
+0000a0f2   SDCard_setCSHigh
+0000a0fa   SDCard_setCSLow
+0000a102   USB_setEnabledEvents
+0000a10a   simple_random_choice
+0000a112   usbSetLineCoding0
+0000a11a   usbSetReport
+0000a122   Msc_ResetFlags
+0000a128   USBMSC_fetchInfoStruct
+0000a12e   usbClearOEP0ByteCount
+0000a134   usbStallOEP0
+0000a13a   USBCDC_handleDataReceived
+0000a13e   USBCDC_handleReceiveCompleted
+0000a142   USBCDC_handleSendCompleted
+0000a146   USBHID_handleDataReceived
+0000a14a   USBHID_handleReceiveCompleted
+0000a14e   USBHID_handleSendCompleted
+0000a152   USBMSC_handleBufferEvent
+0000a156   USB_handleClockEvent
+0000a15a   USB_handleEnumCompleteEvent
+0000a15e   USB_handleResetEvent
+0000a162   USB_handleResumeEvent
+0000a166   USB_handleSuspendEvent
+0000a16a   USB_handleVbusOffEvent
+0000a16e   C$$EXIT
+0000a16e   abort
+0000a176   usbSetControlLineState
+0000a17e   Handler_InReport
+0000a180   _nop
+0000a8ac   tUsbRequestList
+0000aa0a   abromStringDescriptor
+0000ab82   abromConfigurationDescriptorGroup
+0000ad16   abromReportDescriptor
+0000ad4a   stUsbHandle
+0000ad7a   bScsi_Standard_Inquiry_Data
+0000ad9e   Game_explosion
+0000adc8   abromDeviceDescriptor
+0000adda   Report_Luns
+0000adea   usbMouseText
+0000ae06   Game_ship
+0000ae10   Game_explosion4
+0000ae1a   Game_mine2
+0000ae22   Game_explosion3
+0000ae2a   Game_mine1
+0000ae30   Game_explosion2
+0000ae36   piece
+0000ae3a   Game_explosion1
+0000ae3e   BYTES_PER_BLOCK
+0000ae40   dust
 0000fffe   _reset_vector
 ffffffff   .text
 ffffffff   __binit__
@@ -2678,4 +2694,4 @@ ffffffff   binit
 ffffffff   etext
 ffffffff   pinit
 
-[1116 symbols]
+[1122 symbols]
