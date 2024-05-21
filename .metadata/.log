@@ -2985,3 +2985,146 @@ java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.ecl
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2024-05-21 16:08:07.938
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-21 16:08:09.369
+!MESSAGE Indexed 'LAB6' (9 sources, 64 headers) in 1.39 sec: 2,615 declarations; 4,121 references; 4 unresolved inclusions; 34 syntax errors; 28 unresolved names (0.41%)
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:08:52.663
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:08:58.887
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:02.589
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:03.256
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:07.985
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:21.252
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:32.553
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:38.934
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:09:41.867
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:11:28.162
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:11:29.575
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:11:30.289
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2024-05-21 16:11:31.903
+!MESSAGE Could not write file: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.resources 4 566 2024-05-21 16:13:08.903
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2024-05-21 16:23:56.208
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2024-05-21 16:29:06.461
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2024-05-21 16:30:48.149
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources.bak'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources.bak (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.cleanMasterTable(SaveManager.java:227)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1137)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.ui.ide 4 4 2024-05-21 16:30:52.580
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2024-05-21 16:30:52.581
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 566 2024-05-21 16:30:52.581
+!MESSAGE Could not save master table to file 'D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\develop\MSP430\test\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
