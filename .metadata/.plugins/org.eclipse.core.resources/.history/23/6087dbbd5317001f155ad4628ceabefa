@@ -118,12 +118,6 @@ const uint8_t Game_ship[] = {
 const uint8_t Game_mine1[] = {
     0x18, 0x3C, 0x7E, 0x7E, 0x3C, 0x18
 };
-//陨石1被击碎后的碎片
-const uint8_t piece[] =
-{
-	0x0C,0x1E,0x1E,0x0C
-};
-
 
 // A bitmap for mine type two.
 const uint8_t Game_mine2[] =
