@@ -171,6 +171,15 @@ const uint8_t laser[] =
 	0xE0,0xE0
 
 };
+// 陨石4(形状为爱心)：用子弹打碎后飞船可获得护盾，抵挡一次撞击
+const uint8_t Game_mine4[] =
+{
+	0x70, 0x78, 0x7C, 0x3E, 0x7C, 0x78, 0x70
+};
+// 带有护盾的飞船
+const uint8_t ship_protected[] = {
+	0x3F, 0x1F, 0x1F, 0x0F, 0x0F, 0x07, 0x07, 0x03, 0x03, 0x01, 0x00, 0xFF
+};
 
 // A bitmap for the first stage of an explosion
 const uint8_t Game_explosion1[] =
@@ -260,8 +269,8 @@ uint32_t score;
 // Forward declared functions
 void UpdateBackground(uint8_t gap);
 void DrawImage(const uint8_t *image, uint8_t x, uint8_t y, uint8_t width);
-void UpdateMines(void);
-uint8_t DrawShip(void);
+void UpdateMines(int* switcher);
+uint8_t DrawShip(int* protecter);
 void DrawExplosions(void);
 
 /***************************************************************************//**
@@ -576,14 +585,11 @@ void UpdateMines1(int* switcher)
         {
         	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
         }
-        /*else if(mines[count][0] == 3)
+        else if(mines[count][0] == 3)
         {
         	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
         }
-        else if(mines[count][0] == 4)
-        {
-        	DrawImage(Game_mine5, mines[count][1], mines[count][2], 3);
-        }*/
+
 
     }
     /*左移两格粉尘*/
@@ -649,9 +655,9 @@ void UpdateMines1(int* switcher)
     mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
 
     //switch type
-    mines[count][0] = (*switcher)%5;
+    mines[count][0] = (*switcher)%4;
     (*switcher)++;
-    if((*switcher) == 5){
+    if((*switcher) == 4){
     	(*switcher) = 0;
     }
     if (mines[count][0] == 0)
@@ -668,14 +674,11 @@ void UpdateMines1(int* switcher)
     {
     	DrawImage(Game_mine3, mines[count][1], mines[count][2], 6);
     }
-    /*else if(mines[count][0] == 3)
+    else if(mines[count][0] == 3)
     {
     	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
     }
-    else if(mines[count][0] == 4)
-	{
-		DrawImage(Game_mine5, mines[count][1], mines[count][2], 3);
-	}*/
+
 }
 
 /***************************************************************************//**
@@ -685,11 +688,12 @@ void UpdateMines1(int* switcher)
  * @return returner
  ******************************************************************************/
 
-int UpdateMissile(uint8_t fire, uint8_t dead, int returner) {
-    uint8_t bit, x;
-    uint16_t pos;
+int UpdateMissile(uint8_t fire, uint8_t dead, int returner, int* protecter) {
 
+	uint8_t bit, x;
+    uint16_t pos;
     uint8_t interval = 5;
+
     int k;
     int count = 0;
     for(k = 0; k < 3; k++)
@@ -727,6 +731,7 @@ int UpdateMissile(uint8_t fire, uint8_t dead, int returner) {
     int i;
 
     for ( i = 0; i < 3; i++) {
+    	x = 0;
     	if(missile[i][0] == -1 && missile[i][1] == -1)
     	{
     		continue;
@@ -793,10 +798,10 @@ int UpdateMissile(uint8_t fire, uint8_t dead, int returner) {
     					returner = 2;
     				}
     				//击碎了保护石
-    				/*if(mines[bit][0] == 3)
+    				if(mines[bit][0] == 3)
     				{
     					(*protecter) = 1;
-    				}*/
+    				}
 
 
                     // This mine was struck, so remove it from the display.
@@ -943,7 +948,7 @@ int UpdateMissile1(uint8_t fire, uint8_t dead)
  * @return The status of the ship (0 = alive, 1 = dead)
  ******************************************************************************/
 
-uint8_t DrawShip(void)
+uint8_t DrawShip(int* protecter)
 {
     uint16_t pos;
     uint8_t count, bits;
@@ -973,12 +978,128 @@ uint8_t DrawShip(void)
     boom = 0;
 
     // Loop through the ten columns of the ship image.
-    for (count = 0; count < 10; count++)
+    if((*protecter) == 1)
     {
+
+    		// Find the scan lines in the first row of the ship
+    		bits = ship_protected[11] >> pos % 8;
+
+    		// Set the scan lines in the local frame buffer and check for an impact.
+    		frame[2 + (pos / 8) * 102 + (11 + 5)] ^= bits;
+    		if ((frame[2 + (pos / 8) * 102 + (11 + 5)] & bits) != bits)
+    		{
+    			// The protecter hit something, so don't draw it.
+    			frame[2 + (pos / 8) * 102 + (11 + 5)] ^= bits;
+    			//检验是否撞到dust
+    			int dustIndex;
+    		    for (dustIndex = 0; dustIndex < 5; dustIndex++)
+    		    {
+    		        if ((dusts[dustIndex][0] >= 10) && (dusts[dustIndex][0] <= 18) && (dusts[dustIndex][1] >= pos) && (dusts[dustIndex][1] <= pos+8))
+    		        {
+    		        	dusts[dustIndex][0] = -1;
+    		        	dusts[dustIndex][0] = -1;
+    		        	(*protecter) = 0;
+    		        	break;
+    		        }
+    		    }
+    		    //检验是否撞到陨石
+    		    int mineIndex;
+    		    for (mineIndex = 0; mineIndex < 5; mineIndex++)
+    		    {
+    		        if ((mines[mineIndex][1] >= 10) && (mines[mineIndex][1] <= 18) && (mines[mineIndex][2] >= pos) && (mines[mineIndex][2] <= pos+8))
+    		        {
+    		        	explosions[3][0] = 0;
+						explosions[3][1] = mines[mineIndex][1]-1;
+						explosions[3][2] = mines[mineIndex][2];
+    		        	mines[mineIndex][0] = -1;
+    		        	mines[mineIndex][1] = -1;
+    		        	mines[mineIndex][2] = -1;
+    		        	(*protecter) = 0;
+    		            break;
+    		        }
+    		    }
+
+
+
+    		}
+
+    		// Get the scan lines that should be set for the second row of the ship.
+    		bits = ship_protected[11] << (8 - pos % 8);
+    		if (bits)
+    		{
+    			// Set the scan lines in the local frame buffer and check for an impact.
+    			frame[2 + (pos / 8 + 1) * 102 + (11 + 5)] ^= bits;
+    			if ((frame[2 + (pos / 8 + 1) * 102 + (11 + 5)] & bits) != bits)
+    			{
+    				//The protecter hit something, so don't draw it.
+    				frame[2 + (pos / 8 + 1) * 102 + (11 + 5)] ^= bits;
+    				//检验是否撞到dust
+        			int dustIndex;
+        		    for (dustIndex = 0; dustIndex < 5; dustIndex++)
+        		    {
+        		        if ((dusts[dustIndex][0] >= 10) && (dusts[dustIndex][0] <= 18) && (dusts[dustIndex][1] >= pos) && (dusts[dustIndex][1] <= pos+8))
+        		        {
+        		        	dusts[dustIndex][0] = -1;
+        		        	dusts[dustIndex][0] = -1;
+        		        	(*protecter) = 0;
+        		        	break;
+        		        }
+        		    }
+        		    //检验是否撞到陨石
+        		    int mineIndex;
+        		    for (mineIndex = 0; mineIndex < 5; mineIndex++)
+        		    {
+        		        if ((mines[mineIndex][1] >= 10) && (mines[mineIndex][1] <= 18) && (mines[mineIndex][2] >= pos) && (mines[mineIndex][2] <= pos+8))
+        		        {
+        		        	explosions[3][0] = 0;
+    						explosions[3][1] = mines[mineIndex][1]-1;
+    						explosions[3][2] = mines[mineIndex][2];
+        		        	mines[mineIndex][0] = -1;
+        		        	mines[mineIndex][1] = -1;
+        		        	mines[mineIndex][2] = -1;
+        		        	(*protecter) = 0;
+        		            break;
+        		        }
+        		    }
+    			}
+    		}
+    		for (count = 0; count < 10; count++)
+			{
+    		        // Find the scan lines in the first row of the ship
+    		        bits = ship_protected[count] >> pos % 8;
+
+    		        frame[2 + (pos / 8) * 102 + (count + 5)] ^= bits;
+    		        if ((frame[2 + (pos / 8) * 102 + (count + 5)] & bits) != bits)
+    		        {
+    		            // The ship hit something, so don't draw it.
+    		            frame[2 + (pos / 8) * 102 + (count + 5)] ^= bits;
+    		            boom = 1;
+    		        }
+
+    		        // Get the scan lines that should be set for the second row of the ship.
+    		        bits = ship_protected[count] << (8 - pos % 8);
+    		        if (bits)
+    		        {
+    		            // Set the scan lines in the local frame buffer and check for an impact.
+    		            frame[2 + (pos / 8 + 1) * 102 + (count + 5)] ^= bits;
+    		            if ((frame[2 + (pos / 8 + 1) * 102 + (count + 5)] & bits) != bits)
+    		            {
+    		                //The ship hit something, so don't draw it.
+    		                frame[2 + (pos / 8 + 1) * 102 + (count + 5)] ^= bits;
+    		                boom = 1;
+    		            }
+    		        }
+			}
+
+
+    }else
+    {
+    	for (count = 0; count < 10; count++)
+    	{
         // Find the scan lines in the first row of the ship
         bits = Game_ship[count] >> pos % 8;
 
-        // Set the scan lines in the local frame buffer and check for an impact.^=xor
+        // Set the scan lines in the local frame buffer and check for an impact.
         frame[2 + (pos / 8) * 102 + (count + 5)] ^= bits;
         if ((frame[2 + (pos / 8) * 102 + (count + 5)] & bits) != bits)
         {
@@ -1000,6 +1121,8 @@ uint8_t DrawShip(void)
                 boom = 1;
             }
         }
+    	}
+
     }
 
     // See if an impact occurred.
@@ -1084,7 +1207,7 @@ void LaunchpadDef(void)
     char scoreString[6];
     int switcher = 0;
     int returner = 0;
-	//int protecter = 0;
+	int protecter = 0;
 
     buttonsPressed = 0;
     __enable_interrupt();
@@ -1173,15 +1296,16 @@ void LaunchpadDef(void)
                 buttonsPressed = 0;
                 if (dead)
                 {
+                	protecter = 0;
                 	returner = 0;
                     timeout++;
                 }
                 if (!dead)
                 {
-                    dead = DrawShip();
+                    dead = DrawShip(&protecter);
                     if(returner != 2)
                     {
-                    	returner = UpdateMissile(fire, dead,returner);         //更新导弹
+                    	returner = UpdateMissile(fire, dead,returner,&protecter);         //更新导弹
 
 
                     }else if(returner == 2){
@@ -1234,20 +1358,25 @@ void LaunchpadDef(void)
 
 
                 if (score < 500)
-                    __delay_cycles(500000);
-                else if (score < 1000)
                     __delay_cycles(400000);
-                else if (score < 2000)
+                else if (score < 1500)
                     __delay_cycles(300000);
-                else if (score < 3000)
+                else if (score < 2000)
+                    __delay_cycles(250000);
+                else if (score < 2500)
                     __delay_cycles(200000);
-                else
+                else if (score < 3000)
+                    __delay_cycles(150000);
+                else if (score < 3500)
                     __delay_cycles(100000);
+                else
+                    __delay_cycles(50000);
 
             }
 
             if (buttonsPressed & BUTTON_S2)
             {
+            	protecter = 0;
             	returner = 0;
                 Dogs102x6_clearScreen();
                 buttonsPressed = 0;
