@@ -540,19 +540,20 @@ void UpdateMines1(int* switcher)
 
         // Move the mine one step to the left
         mines[count][1]--;
-        //随机决定上下移动
-/*        int choice = simple_random_choice();
-        if(choice == 0 && mines[count][2] <= 44)
+        idx = RandomNumber();
+
+        if(mines[count][0] == 1)
         {
-        	mines[count][2]++;
+        	if (idx >= 0x0c000000)
+			{
+        		mines[count][2]--;
+			}
         }
-        if(choice == 1 && mines[count][2] >= 20)
-        {
-        	mines[count][2]--;
-        }*/
+
+
 
         // If the mine is too far off the left edge of the display then disable it.
-        if (mines[count][1] == -8)
+        if (mines[count][1] == -8 /*|| mines[count][2] <= -3*/)
         {
             mines[count][0] = -1;
             mines[count][1] = -1;
@@ -603,7 +604,7 @@ void UpdateMines1(int* switcher)
         }
 
         // Move the dust two step to the left
-        dusts[dustIndex][0] -= 2;
+        dusts[dustIndex][0] -= 3;
 
         // If the dust is too far off the left edge of the display then disable it.
         if (dusts[dustIndex][0] <= -8)
@@ -627,10 +628,10 @@ void UpdateMines1(int* switcher)
     }
     // Only place new mines occasionally.
     idx = RandomNumber();
-    if (idx >= 0x0c000000)
+/*    if (idx >= 0x0c000000)
     {
         return;
-    }
+    }*/
 
     // Try to find an unused mine entry.
     for (count = 0; count < 5; count++)
@@ -652,7 +653,13 @@ void UpdateMines1(int* switcher)
     mines[count][1] = 94;
     // Choose a random vertical position
     idx = NEXT_RAND(idx);
-    mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
+    if(mines[count][0] == 1){
+    	mines[count][2] = 63;
+    }else{
+    	mines[count][2] = offset[0] + idx % (64 - offset[0] - offset[1]);
+    }
+
+
 
     //switch type
     mines[count][0] = (*switcher)%4;
@@ -678,6 +685,7 @@ void UpdateMines1(int* switcher)
     {
     	DrawImage(Game_mine4, mines[count][1], mines[count][2], 7);
     }
+
 
 }
 

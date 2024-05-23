@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="fire" key="selection"/>
+		<item value="mines" key="selection"/>
 		<list key="findhistory">
+			<item value="mines"/>
+			<item value="dust"/>
+			<item value="laser"/>
+			<item value="frame"/>
+			<item value="protecter"/>
+			<item value="UpdateMines"/>
+			<item value="DrawShip"/>
 			<item value="fire"/>
-			<item value="return"/>
-			<item value="returner"/>
-			<item value="UpdateMissile"/>
-			<item value="dusts"/>
-			<item value="score"/>
-			<item value="Game_mine3"/>
-			<item value="Game_mine2"/>
 		</list>
 		<list key="replacehistory">
 		</list>

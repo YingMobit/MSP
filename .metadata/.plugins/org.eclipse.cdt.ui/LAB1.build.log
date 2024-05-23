@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project LAB1 ****
+
+D:\develop\MSP430\ccsv5\utils\bin\gmake -k all 
+'Building file: ../lab1.c'
+'Invoking: MSP430 Compiler'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --include_path="D:/develop/MSP430/ccsv5/ccs_base/msp430/include" --include_path="D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/F5xx_F6xx_Core_Lib" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/MSP-EXP430F5529_HAL" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/FatFs" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/CTS" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_API/USB_CDC_API" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_API/USB_Common" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_API/USB_HID_API" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_User" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_API" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/USB/USB_config" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/UserExperienceDemo" --include_path="D:/develop/MSP430/MSP-EXP430F5529 DEMO CODE/LAB1/UserExperienceDemo/Puzzle" --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal --preproc_with_compile --preproc_dependency="lab1.pp"  "../lab1.c"
+'Finished building: ../lab1.c'
+' '
+'Building target: LAB1.out'
+'Invoking: MSP430 Linker'
+"D:/develop/MSP430/ccsv5/tools/compiler/msp430/bin/cl430" -vmspx --abi=coffabi -O0 -g --gcc --define=__MSP430F5529__ --diag_warning=225 --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --large_memory_model --printf_support=minimal -z -m"LAB1.map" --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"D:/develop/MSP430/ccsv5/ccs_base/msp430/include" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/lib" -i"D:/develop/MSP430/ccsv5/tools/compiler/msp430/include" --reread_libs --warn_sections --undef_sym=iUsbInterruptHandler --rom_model -o "LAB1.out"  "./USB/USB_User/usb_eventHandling.obj" "./USB/USB_User/usbConstructs.obj" "./USB/USB_User/UsbMscUser.obj" "./USB/USB_config/descriptors.obj" "./USB/USB_config/UsbIsr.obj" "./system_pre_init.obj" "./lab1.obj" "./LAB1main.obj" -l"libc.a" "../MSP-EXP430F5529_UE.lib" "../lnk_msp430f5529.cmd" "../lnk_msp430f5529_USB.cmd" "../rts430xl.lib" 
+<Linking>
+'Finished building target: LAB1.out'
+' '
+
+**** Build Finished ****
